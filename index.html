@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuljai exim & services</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: #0a192f;
+            padding-top: 70px;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+
+            background:linear-gradient(90deg, #1378f382, #0d1e41);;
+            backdrop-filter: blur(10px);
+
+            z-index: 1000;
+
+            will-change: transform;
+            /* 👈 ADD */
+            transform: translateZ(0);
+            /* 👈 ADD */
+        }
+
+        .logo {
+            color: #ccd6f6;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .tags {
+            display: flex;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ccd6f6;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+        }
+
+        /* HAMBURGER */
+        .menu-btn {
+            display: none;
+            font-size: 26px;
+            color: #ccd6f6;
+            cursor: pointer;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 260px;
+            height: 100vh;
+
+            background-color: #020c1b;
+
+
+            display: flex;
+            flex-direction: column;
+            padding: 90px 20px 20px;
+            gap: 20px;
+
+            transition: right 0.4s ease;
+            z-index: 999;
+        }
+
+        .sidebar:active {
+            border: 1px solid #0099ff;
+            border-radius: 12px;
+        }
+
+        #menu-toggle:checked~.sidebar {
+            right: 0;
+        }
+
+        /* PAGE 1 */
+        .page1 {
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pg1-image img {
+            width: 220px;
+        }
+
+        .pg1-heading {
+            max-width: 600px;
+        }
+
+        .pg1-heading h1 {
+            font-size: 32px;
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pg1-para {
+            color: #6884ac;
+            margin-top: 10px;
+        }
+
+        /* BUTTON */
+        .pg1-btn {
+            margin-top: 20px;
+        }
+
+        .pg1-btn button {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            color: white;
+            border: none;
+            padding: 9px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 200px;
+        }
+
+        .pg1-btn button:hover {
+            transform: scale(1.05);
+        }
+
+        .page2 {
+            min-height: 100vh;
+        }
+
+        .pg2-heading {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            padding: 30px;
+            gap: 20px;
+
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .box1 {
+            background: #0f172a;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+            color: #ccd6f6;
+        }
+
+        .box1:hover {
+            transform: translateY(-8px);
+           background: linear-gradient(135deg, #1e3b8a, #0f172a);
+        }
+
+        .b-para {
+            font-size: 14px;
+            width: auto;
+        }
+
+        .b-btn {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .b1-btn {
+            padding: 8px 10px;
+            width: 150px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            color: white;
+            margin-top: 12px;
+        }
+
+        .fa-solid {
+            margin-right: 10px;
+        }
+
+        .b2-btn {
+            padding: 8px 10px;
+            width: 150px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #f59e0b, #ea580c);
+            color: white;
+            margin-top: 12px;
+        }
+       
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .tags {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .pg1-heading {
+                text-align: center;
+            }
+
+            .pg1-para {
+                text-align: center;
+            }
+
+            .pg1-btn {
+                display: flex;
+                justify-content: center;
+                margin-top: 25px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .page2 {
+                min-height: 100vh;
+            }
+
+            .container2 {
+                display: grid;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .color1 {
+                width: auto;
+            }
+             .contact-row {
+        flex-direction: column;   /* stack items */
+        align-items: flex-start;  /* align left */
+    }
+
+    .contact-row a {
+        width: 100%;
+    }
+
+    .last {
+        width: 100%; /* full width button */
+    }
+        }
+
+        .tags a i {
+            margin-right: 8px;
+        }
+
+        .page3 {
+            min-height: 150vh;
+            background-color: #0a192f;
+        }
+
+        .pg3-hd {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            flex-wrap: wrap;
+            padding: 25px;
+            margin-bottom: -25px;
+        }
+
+        .p3-para {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: #6884ac;
+            
+        }
+        .p4-para {
+          color: #6884ac;
+          margin-top: 20px;
+         margin-left: 20px;
+         display: flex;
+         flex-direction: column;
+         text-align: justify;
+         padding: 10px;
+         width: 90%;
+        }
+
+       
+
+        .color1 {
+            width: 90%;
+
+        }
+
+        footer {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 10vh;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+
+        }
+
+        .cont {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .last1 {
+            padding: 7px 20px;
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+            width: 200px;
+            background-color: #25D366;
+            color: white;
+        }
+        .last{
+            padding: 7px 20px;
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+            width: 200px;
+            background-color: white;
+            color: black;
+        }
+        .fa-whatsapp{
+            color: white !important;
+        }
+        .last:hover {
+            transform: scale(1.05);
+            border: 1px solid #0099ff;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            color: black;
+            transition: 0.3s;
+            margin-top: 20px;
+            flex-direction: row;
+        }
+
+        .fa-brands {
+            margin-right: 10px;
+            color: black;
+        }
+
+        .ic {
+            color: black;
+        }
+
+        .back {
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        .project{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: -10px;
+        }
+        .end{
+            display: flex;
+            padding: 10px;
+            background-color: #0a192f;
+            color: white;
+            justify-content: center;
+            align-content: center;
+        }
+        ol{
+          width: auto;
+         
+          padding: 15px;
+        }
+       .color{
+        display: flex;
+       justify-content: center;
+       text-align: justify;
+        padding: 10px;
+       }
+       .h9{
+        margin-bottom: -20px;
+       }
+       
+       .projects{
+        padding: 19px;
+        margin-top: -20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 90%;
+       }
+       .h9{
+         background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+       }
+      .terms{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+    .mayank {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+     padding: 10px 0;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.contact-row h5 {
+    margin: 0px;
+}
+
+.contact-row span {
+    font-weight: 500;
+}
+.it{
+    color: black;
+}
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Tuljai exim & services</div>
+
+        <div class="tags">
+            <a href="#page1"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#page2"><i class="fa-solid fa-briefcase"></i> Services</a>
+            <a href="#page3"><i class="fa-solid fa-info-circle"></i> About us</a>
+            <a href="#page4"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+        <label for="menu-toggle" class="menu-btn">☰</label>
+    </nav>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="sidebar">
+        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;">
+            <i class="fa-solid fa-briefcase"></i> Services
+        </a>
+        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;">
+            <i class="fa-solid fa-info-circle"></i> About us
+        </a>
+        <a href="#page4" onclick="document.getElementById('menu-toggle').checked=false;">
+            <i class="fa-solid fa-envelope"></i> Contact
+        </a>
+    </div>
+    <div class="page1" id="page1">
+        <div class="container">
+
+            <div class="pg1-image">
+                <img src="shri logo.png" alt="logo">
+            </div>
+
+            <div class="pg1-heading">
+                <h1>Tuljai exim & services</h1>
+                <p class="pg1-para">
+                    Tuljai Exim and Services offers export, solar energy and electrical solutions, focusing on quality,
+                    innovation, and reliable service to meet diverse client needs.
+                </p>
+
+                <div class="pg1-btn">
+                    <a href="#page2"><button>Explore</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="page2" id="page2">
+        <div class="pg2-heading">
+            <h1>Services/product</h1>
+        </div>
+        <div class="container2">
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="solar1.jpg" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Solar street light</h2>
+                    <p class="b-para">Smart, eco-friendly lighting powered by the sun—zero electricity cost, high
+                        performance, and built for long-term reliability</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="solar home.webp" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Home Solar system</h2>
+                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce
+                        electricity costs and support a cleaner, sustainable future</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="solar street traffic.webp" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Smart Solar Traffic Signals</h2>
+                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic
+                        management</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="corn.webp" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Corn/maize</h2>
+                    <p class="b-para">We provide high-quality corn for global markets, ensuring freshness, consistency,
+                        and reliable supply. Our export services meet international standards, making our corn ideal for
+                        various food and industrial uses.</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="sugar.webp" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Sugar</h2>
+                    <p class="b-para">We supply high-quality sugar for global markets, ensuring purity, consistency, and
+                        timely delivery. Our export solutions are designed to meet international standards and customer
+                        requirements</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="rice.webp" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Rice</h2>
+                    <p class="b-para">We offer premium quality rice with excellent taste and nutritional value. Sourced
+                        and processed with care, our rice is ideal for global distribution with assured quality and
+                        reliability</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="wheat.webp" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Wheat</h2>
+                    <p class="b-para">Our wheat exports deliver superior quality grains suitable for various food
+                        applications. With a focus on freshness and consistency, we ensure dependable supply for
+                        international markets</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div class="b-img">
+                    <img src="jawar.jpg" width="200px">
+                </div>
+                <div class="b-heading">
+                    <h2>Jawar</h2>
+                    <p class="b-para">We offer premium quality jowar (sorghum) known for its nutritional value and
+                        purity. Carefully sourced and processed, our jowar meets international standards, ensuring
+                        reliable supply for global markets</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
+                            now</button></a>
+
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="page3">
+        <div class="pg3-hd" id="page3">
+            <h1 class="h1">About us</h1>
+            </div>
+            <div class="color">
+                <p class="p3-para">Tuljai Exim & Services is a trusted name in international exports, renewable energy,
+                    and
+                    electrical solutions. We specialize in delivering high-quality products and services tailored to
+                    meet
+                    the diverse needs of our clients.
+
+                    Our expertise spans solar street lights, home solar systems, smart traffic signals, and agricultural
+                    commodities such as corn, sugar, rice, wheat, and jowar.
+
+                    Founded with a commitment to quality, innovation, and sustainability, we aim to provide reliable
+                    solutions that drive efficiency and support a greener, more connected world.
+
+                    Our mission is to ensure customer satisfaction through timely delivery, exceptional service, and
+                    adherence to international standards.
+
+                    Our GSTN number : GSTN-27EZDPK6746K1ZT
+                </p>
+            </div>
+            <div class="project">
+                <h1 class="h9">Our project</h1>
+               <div class="color"> <p class="p3-para">We are currently executing the installation of solar power plant projects in Khavda, Gujarat, and Harba, Rajasthan, with a strong focus on precision, efficiency, and long-term reliability. The ongoing work includes panel mounting, electrical wiring, and system testing, all being carried out in accordance with industry standards</p></div>
+               <div class="projects">
+                <div class="p1-img">
+                    <img src="project1.jpeg" alt="" width="100%">
+                </div>
+
+                <div class="p1-video">
+                    <video autoplay muted loop width="100%">
+                        <source src="sol video.mp4" type="video/mp4">
+                    </video>
+</div>                
+                <div class="p2-img">
+                    <img src="pro img2.jpeg" alt="" width="100%">
+                </div>
+            </div>
+            </div>
+            <div class="terms">
+            <h1 class="h9">Terms & condition</h1>
+            
+                
+                <ol type="1">
+                    <div class="p4-para">
+                    <li> General:</li>
+                    All products and services offered by Tuljai Exim & Services are subject to availability and
+                    compliance with international standards. By using our website or services, you agree to these
+                    terms.
+                    <li>Product Information:</li>
+                    We strive to provide accurate product descriptions and specifications. However, slight
+                    variations may occur. Clients are responsible for confirming specifications before placing
+                    orders.
+
+                    <li>Pricing & Payment:</li>
+                    Prices are subject to change without prior notice. Payments should follow the agreed terms
+                    between Tuljai Exim & Services and the client.
+
+                    <li> Delivery & Shipping:</li>
+                    Delivery times are estimated and may vary due to shipping, customs, or other logistical factors.
+
+                    <li> Limitation of Liability:</li>
+                    Tuljai Exim & Services is not liable for indirect or consequential damages arising from the use
+                    of our products or services.
+
+                    <li> Privacy:</li>
+                    Client information collected through our website or services will be handled securely and in
+                    accordance with applicable privacy laws.
+
+                    <li>Governing Law:</li>
+                    These terms are governed by the laws of India. Any disputes will be resolved under Indian
+                    jurisdiction.
+
+                    <li> Note: By using our services or website, you agree to these terms.</li>
+                    </div>
+                </ol 
+            
+        </div>
+    </div>
+</div>
+
+    <a href="#page2"><div class="back"> <i class="fa-solid fa-arrow-up"></i>Back to top</div></a>
+    <footer id="page4">
+            <div class="1">
+                <h2>About owner:</h2>
+                </div>
+                <div class="1">
+                    Name: Shrinath Kamble
+                </div>
+                <div class="2">
+                livein: <i class="fa-solid fa-location-dot"></i>Mumbai, India<br>
+                Completed diploma in solar and electrical engineering in <i class="fa-solid fa-location-dot"></i>solapur
+            </div>
+            <div class="3">
+                <h2>Contact directly to owner:</h2>
+            </div>
+            
+            <div class="mayank">
+
+    <div class="contact-row">
+        <h5>Contact no:</h5>
+        <span>+91 8605408258</span>
+        <a href="tel:+918605408258">
+            <button class="last"><i class="fa-solid fa-phone"></i> Call now</button>
+        </a>
+    </div>
+
+    <div class="contact-row">
+        <h5>Contact no:</h5>
+        <span>+91 9356824656</span>
+        <a href="tel:+919356824656">
+            <button class="last"><i class="fa-solid fa-phone"></i> Call now</button>
+        </a>
+    </div>
+
+    <div class="contact-row">
+        <h5>WhatsApp:</h5>
+        <a href="https://wa.me/9356824656">
+            <button class="last1"> <i class="fa-brands fa-whatsapp"></i> Chat now</button>
+        </a>
+    </div>
+
+    <div class="contact-row">
+        <h5>Email:</h5>
+        <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I am interested in your business. I would like to know more about it."
+>
+            <button class="last"><i class="fa-solid fa-envelope"></i> Mail</button>
+        </a>
+    </div>
+
+</div>
+<div class="social-icons">
+    <a href="#" class="it"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+    <a href="#" class="it"><i class="fa-brands fa-youtube"></i>Youtube</a>
+    <a href="#" class="it"><i class="fa-brands fa-x-twitter"></i>Twitter</a>
+    <a href="#" class="it"><i class="fa-brands fa-instagram"></i>Instagram</a>
+</div>
+        </div>
+        </div>
+        </div>
+       </footer>
+       <div class="end">
+            <h6> Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</h6>
+    </div>
+       
+  
+</body>
+
+</html>
