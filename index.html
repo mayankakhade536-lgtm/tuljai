@@ -555,6 +555,73 @@
         background-color: #2563eb;
         color: white;
     }
+    /* ===== LOADER CSS (ADD ONLY) ===== */
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#0b1d3a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    overflow:hidden;
+    transition: opacity 0.8s ease;
+}
+
+.wrapper{
+    display:flex;
+    align-items:center;
+    gap:0;
+}
+
+/* LOGO */
+.logo-loader{
+    width:clamp(60px, 10vw, 120px);
+    height:clamp(60px, 10vw, 120px);
+    border-radius:50%;
+    object-fit:cover;
+    transform: scale(0.6);
+    opacity:0;
+    transition: all 1s cubic-bezier(.22,1,.36,1);
+}
+
+/* TEXT */
+.text-loader{
+    font-size:clamp(16px, 2.5vw, 32px);
+    font-weight:600;
+    color:#4fc3f7;
+    white-space:nowrap;
+    transform: translateX(-110%);
+    transition: transform 1.4s cubic-bezier(.22,1,.36,1);
+}
+
+/* MASK */
+.text-box{
+    overflow:hidden;
+}
+
+/* STEP 1 */
+.show-loader .logo-loader{
+    transform: scale(1);
+    opacity:1;
+}
+
+/* STEP 2 */
+.move-loader{
+    gap:clamp(8px, 2vw, 24px);
+}
+
+.move-loader .logo-loader{
+    transform: translateX(-30%);
+}
+
+.move-loader .text-loader{
+    transform: translateX(0);
+}
 </style>
 </head>
 
@@ -598,6 +665,7 @@
             <div class="pg1-heading">
                 <h1>Tuljai exim & services</h1>
                 <p class="pg1-para">
+                    <b>Welcome to tuljai exim & services</b>
                     Tuljai Exim and Services offers export, solar energy and electrical solutions, focusing on quality,
                     innovation, and reliable service to meet diverse client needs.
                 </p>
@@ -925,10 +993,7 @@
 
         </div>
         <div class="social-icons">
-            <a href="#" class="it"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
-            <a href="#" class="it"><i class="fa-brands fa-youtube"></i>Youtube</a>
-            <a href="#" class="it"><i class="fa-brands fa-x-twitter"></i>Twitter</a>
-            <a href="#" class="it"><i class="fa-brands fa-instagram"></i>Instagram</a>
+           
         </div>
         </div>
         </div>
@@ -939,7 +1004,42 @@
     </div>
 
     
+ <!-- LOADER START -->
+<div id="loader">
+    <div class="wrapper" id="wrapper">
+        <img src="shri logo.png" class="logo-loader" alt="logo">
+        <div class="text-box">
+            <div class="text-loader">Tuljai Exim & Services</div>
+        </div>
+    </div>
+</div>
+<!-- LOADER END -->
+ <script>
+window.addEventListener("load", function(){
 
+    const wrapper = document.getElementById("wrapper");
+    const loader = document.getElementById("loader");
+
+    // Step 1: logo entry
+    setTimeout(() => {
+        wrapper.classList.add("show-loader");
+    }, 200);
+
+    // Step 2: move + text reveal
+    setTimeout(() => {
+        wrapper.classList.add("move-loader");
+    }, 1200);
+
+    // Step 3: remove loader
+    setTimeout(() => {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 800);
+    }, 3200);
+
+});
+</script>
 </body>
 
 </html>
