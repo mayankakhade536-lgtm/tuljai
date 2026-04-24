@@ -1087,6 +1087,22 @@ if (MAINTENANCE_MODE) {
 
   animation: pop 0.3s ease;
 }
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 35px;
+}
+.fa-brands{
+    font-size: 25px;
+    color: white;
+   transition: 0.3s;
+}
+.fa-brands:hover{
+   transform: scale(1.05);
+}
 </style>
 </head>
 
@@ -1120,7 +1136,7 @@ if (MAINTENANCE_MODE) {
     <i class="fa-solid fa-envelope"></i> Contact
 </a>
     </div>
-    <section class="page1" id="page1">
+    <section class="page1" id="page1" >
         <div class="container">
 
             <div class="pg1-image">
@@ -1521,7 +1537,7 @@ if (MAINTENANCE_MODE) {
 
             <p>
                 <i class="fa-solid fa-location-dot"></i>
-                <b>Location:</b> Mumbai, India
+                <b>Live in:</b> Mumbai, India
             </p>
 
             <p>
@@ -1586,6 +1602,12 @@ if (MAINTENANCE_MODE) {
                     <button>Terms & services</button>
                 </a>
                 </div>
+                <div class="icons">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+</div>
                 <div class="trust-section">
                     <h5>"Dont worry trust us"<br>
                     We are not spam!</h5>
@@ -1598,6 +1620,7 @@ if (MAINTENANCE_MODE) {
   
 
 </div>
+
     </footer>
     <div class="end" >
         <h5> Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</h6>
@@ -1621,7 +1644,9 @@ if (MAINTENANCE_MODE) {
     <div class="online"></div>
    Confused?
   </div>
-  <div class="chat-text" id="chatText"></div>
+  <div class="chat-text" id="chatText">
+   
+  </div>
 </div>
 
   <div class="whatsapp-btn" onclick="openWhatsApp()">
@@ -1685,7 +1710,6 @@ window.addEventListener("load", () => {
   const text = "Need help? We’re online 👋";
 
   let i = 0;
-  let loopRunning = true;
 
   function type() {
     if (i < text.length) {
@@ -1696,18 +1720,17 @@ window.addEventListener("load", () => {
   }
 
   function showChat() {
-    // reset
     chatText.innerHTML = "";
     i = 0;
 
     badge.style.display = "none";
-
     chatBox.style.display = "block";
+
     setTimeout(() => chatBox.classList.add("show"), 100);
 
     type();
 
-    // hide after 30 sec
+    // hide after 10 sec
     setTimeout(hideChat, 10000);
   }
 
@@ -1720,15 +1743,19 @@ window.addEventListener("load", () => {
     }, 500);
   }
 
-  // first show
-  setTimeout(showChat, 1000);
+  // ✅ WAIT 8 seconds before starting anything
+  setTimeout(() => {
 
-  // 🔥 REPEAT LOOP (show again after 60 sec gap)
-  setInterval(() => {
-    if (chatBox.style.display === "none") {
-      showChat();
-    }
-  }, 10000);
+    showChat(); // first show after 8 sec
+
+    // ✅ LOOP: show every 20 sec (you can change this)
+    setInterval(() => {
+      if (chatBox.style.display === "none") {
+        showChat();
+      }
+    }, 20000);
+
+  }, 8000); // 👈 8 seconds delay
 });
 </script>
 </body>
