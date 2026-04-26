@@ -1094,9 +1094,10 @@ if (MAINTENANCE_MODE) {
     align-items: center;
     padding: 20px;
     gap: 35px;
+    margin-top: -20px;
 }
 .fa-brands{
-    font-size: 25px;
+    font-size: 22px;
     color: white;
    transition: 0.3s;
 }
@@ -1112,6 +1113,19 @@ if (MAINTENANCE_MODE) {
   100% {
     transform: translateX(-100%);
   }
+}
+.payment-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.payment-logos img {
+  height: 40px;     /* perfect size */
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s;
 }
 </style>
 </head>
@@ -1617,12 +1631,20 @@ if (MAINTENANCE_MODE) {
                     <button>Terms & services</button>
                 </a>
                 </div>
-                <div class="icons">
-    <i class="fa-brands fa-instagram"></i>
-    <i class="fa-brands fa-facebook"></i>
-    <i class="fa-brands fa-youtube"></i>
-    <i class="fa-brands fa-x-twitter"></i>
-</div>
+
+                 <div class="contact-box">
+                <span>
+                  Payments Accepted
+                </span>
+                <div class="payment-logos">
+                    
+    <img src="https://img.icons8.com/color/96/visa.png" alt="Visa">
+    <img src="https://img.icons8.com/color/96/mastercard.png" alt="Mastercard">
+    <img src="https://img.icons8.com/color/96/paypal.png" alt="PayPal">
+    <img src="https://img.icons8.com/color/96/bhim.png" alt="UPI">
+  </div>
+            </div>
+                
                 <div class="trust-section">
                     <h5>"Dont worry trust us"<br>
                     We are not spam!</h5>
@@ -1637,6 +1659,12 @@ if (MAINTENANCE_MODE) {
 </div>
 
     </footer>
+     <div class="icons">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+</div>
     <div class="end" >
         <h5> Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</h6>
     </div>
