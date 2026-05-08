@@ -1,1806 +1,1581 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tuljai Exim & Services offers solar solutions, exports, and electrical services with high quality and reliability.">
-<meta name="keywords" content="solar, export, electrical, Tuljai, services, India">
-    <title>Tuljai exim & services</title>
+    <meta name="keywords" content="solar, export, electrical, Tuljai, services, India">
+    <title>Tuljai Exim & Services</title>
 
-    <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-   <link rel="icon" type="image/png" href="shri logo.png">
-    <link rel="icon" type="png" sizes="20x20" href="shri logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="shri logo.png">
+
     <script>
-const MAINTENANCE_MODE = false; // true = ON, false = OFF
+        const MAINTENANCE_MODE = false;
+        if (MAINTENANCE_MODE) window.location.replace("maintenance.html");
+    </script>
 
-if (MAINTENANCE_MODE) {
-  window.location.replace("maintenance.html");
-}
-</script>
-</head>
-<style>
-    
-    section {
-    scroll-margin-top: 80px;
-}
-
-    * {
-        box-sizing: border-box;
-        font-family: 'Rubik', sans-serif;
-    }
-
-    body {
-        margin: 0;
-        background-color: #0a192f;
-        padding-top: 70px;
-    }
-
-    /* NAVBAR */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
-
-        background: linear-gradient(90deg, #1378f382, #0d1e41);
-        ;
-        backdrop-filter: blur(10px);
-
-        z-index: 1000;
-
-        will-change: transform;
-        /* 👈 ADD */
-        transform: translateZ(0);
-        /* 👈 ADD */
-    }
-
-    .logo {
-        color: #ccd6f6;
-        font-size: 25px;
-        font-weight: bold;
-    }
-
-    .tags {
-        display: flex;
-        gap: 20px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #ccd6f6;
-        transition: 0.3s;
-        font-size: 15px;
-    }
-
-    a:hover {
-        transform: scale(1.05);
-    }
-
-    /* HAMBURGER */
-    .menu-btn {
-        display: none;
-        font-size: 26px;
-        color: #ccd6f6;
-        cursor: pointer;
-    }
-
-    #menu-toggle {
-        display: none;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 260px;
-        height: 100vh;
-
-        background-color: #020c1b;
-
-
-        display: flex;
-        flex-direction: column;
-        padding: 90px 20px 20px;
-        gap: 20px;
-
-        transition: right 0.4s ease;
-        z-index: 999;
-    }
-
-    .sidebar:active {
-        border: 1px solid #0099ff;
-        border-radius: 12px;
-    }
-
-    #menu-toggle:checked~.sidebar {
-        right: 0;
-    }
-
-    /* PAGE 1 */
-    .page1 {
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .container {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-
-    .pg1-image img {
-        width: 220px;
-    }
-
-    .pg1-heading {
-        max-width: 600px;
-    }
-
-    .pg1-heading h1 {
-        font-size: 32px;
-        background: linear-gradient(90deg, #60a5fa, #2563eb);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .pg1-para {
-        margin-top: 10px;
-         color: #9fb3d1;
-    font-size: 14px;
-    text-align: justify;
-    }
-
-    /* BUTTON */
-    .pg1-btn {
-        margin-top: 20px;
-    }
-
-    .pg1-btn button {
-        background: linear-gradient(90deg, #60a5fa, #2563eb);
-        color: white;
-        border: none;
-        padding: 9px 20px;
-        border-radius: 15px;
-        cursor: pointer;
-        transition: 0.3s;
-        width: 200px;
-    }
-
-    .pg1-btn button:hover {
-        transform: scale(1.05);
-    }
-
-    .page2 {
-        min-height: 100vh;
-    }
-
-    .pg2-heading {
-        background: linear-gradient(90deg, #60a5fa, #2563eb);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 15px;
-    }
-
-   .container2 {
-      display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 30px;
-}
-
-  .box1 {
-    background: #0f172a;
-    padding: 30px 20px;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    
-    transition: transform 0.4s cubic-bezier(.22,1,.36,1),
-                box-shadow 0.4s ease,
-                background 0.3s ease;
-                color: white;
-}
-
-.box1:hover {
-    transform: translateY(-10px) scale(1.03) !important;
-    background: linear-gradient(135deg, #1e3b8a, #0f172a);
-    
-    box-shadow: 
-        0 20px 40px rgba(0,0,0,0.4),
-        0 0 20px rgba(28, 52, 81, 0.3);
-}
-.b-img img {
-    transition: transform 0.4s ease;
-}
-
-.box1:hover .b-img img {
-    transform: scale(1.08);
-}
-
-    .b-para {
-        font-size: 14px;
-        width: auto;
-    }
-
-    .b-btn {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .b1-btn {
-        padding: 8px 10px;
-        width: 150px;
-        border-radius: 12px;
-        border: none;
-        background: linear-gradient(90deg, #22c55e, #16a34a);
-        color: white;
-        margin-top: 12px;
-    }
-
-    .fa-solid {
-        margin-right: 10px;
-    }
-
-    .b2-btn {
-        padding: 8px 10px;
-        width: 150px;
-        border-radius: 12px;
-        border: none;
-        background: linear-gradient(90deg, #f59e0b, #ea580c);
-        color: white;
-        margin-top: 12px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-        .tags {
-            display: none;
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
         }
 
-        .menu-btn {
-            display: block;
+        body {
+            margin: 0;
+            background-color: #0a192f;
+            padding-top: 70px;
         }
 
-        .pg1-heading {
-            text-align: center;
+        section {
+            scroll-margin-top: 80px;
         }
 
-        .pg1-para {
-            text-align: center;
-        }
-
-        .pg1-btn {
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
-            justify-content: center;
-            margin-top: 25px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(90deg, #1378f382, #0d1e41);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            will-change: transform;
+            transform: translateZ(0);
         }
 
         .logo {
-            font-size: 18px;
+            color: #ccd6f6;
+            font-size: 25px;
+            font-weight: bold;
         }
 
+        .tags {
+            display: flex;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ccd6f6;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 26px;
+            color: #ccd6f6;
+            cursor: pointer;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 260px;
+            height: 100vh;
+            background-color: #020c1b;
+            display: flex;
+            flex-direction: column;
+            padding: 90px 20px 20px;
+            gap: 20px;
+            transition: right 0.4s ease;
+            z-index: 999;
+        }
+
+        #menu-toggle:checked ~ .sidebar {
+            right: 0;
+        }
+
+        /* PAGE 1 */
+        .page1 {
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pg1-image img {
+            width: 220px;
+        }
+
+        .pg1-heading {
+            max-width: 600px;
+        }
+
+        .pg1-heading h1 {
+            font-size: 32px;
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pg1-para {
+            margin-top: 10px;
+            color: #9fb3d1;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .pg1-btn {
+            margin-top: 20px;
+        }
+
+        .pg1-btn button {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            color: white;
+            border: none;
+            padding: 9px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 200px;
+        }
+
+        .pg1-btn button:hover {
+            transform: scale(1.05);
+        }
+
+        /* PAGE 2 */
         .page2 {
             min-height: 100vh;
         }
 
-        .container2 {
-            display: grid;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .pg2-heading {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
         }
 
-        .color1 {
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .box1 {
+            background: #0f172a;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s cubic-bezier(.22,1,.36,1),
+                        box-shadow 0.4s ease,
+                        background 0.3s ease;
+            color: white;
+        }
+
+        .box1:hover {
+            transform: translateY(-10px) scale(1.03) !important;
+            background: linear-gradient(135deg, #1e3b8a, #0f172a);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(28,52,81,0.3);
+        }
+
+        .b-img img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+            transition: transform 0.4s ease;
+        }
+
+        .box1:hover .b-img img {
+            transform: scale(1.08);
+        }
+
+        .b-para {
+            font-size: 14px;
             width: auto;
         }
 
-        .contact-row {
+        .b-btn {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .b1-btn {
+            padding: 8px 10px;
+            width: 150px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            color: white;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        .b2-btn {
+            padding: 8px 10px;
+            width: 150px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #f59e0b, #ea580c);
+            color: white;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        .fa-solid {
+            margin-right: 10px;
+        }
+
+        /* PAGE 3 */
+        .page3 {
+            min-height: 150vh;
+            background-color: #0a192f;
+        }
+
+        .pg3-hd {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            flex-wrap: wrap;
+            padding: 25px;
+            margin-bottom: -25px;
+        }
+
+        .p3-para {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            color: #6884ac;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .about-box {
+            background: #0f172a;
+            padding: 25px;
+            border-radius: 15px;
+            color: #ccd6f6;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .about-box:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            background: linear-gradient(135deg, #1e3b8a, #0f172a);
+        }
+
+        .about-box h2 {
+            margin-bottom: 10px;
+            color: #60a5fa;
+        }
+
+        .about-box p,
+        .about-box li {
+            color: #9fb3d1;
+            font-size: 14px;
+        }
+
+        /* PROJECT SECTION */
+        .project {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .project-text {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .project-media {
+            background: #0f172a;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .project-media img,
+        .project-media video {
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .h9 {
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: -20px;
+        }
+
+        /* OWNER SECTION */
+        .owner-section {
+            padding: 70px 20px;
+            color: #ccd6f6;
+        }
+
+        .owner-section h2 {
+            text-align: center;
+            color: #60a5fa;
+            font-size: 28px;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .owner-card {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 10px;
+            background: transparent;
+            border: none;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .owner-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .owner-info p {
+            font-size: 16px;
+            color: #9fb3d1;
+            margin: 14px 0;
+            line-height: 1.7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .owner-info i {
+            color: #60a5fa;
+            font-size: 18px;
+        }
+
+        .owner-contact {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
             flex-direction: column;
-            /* stack items */
-            align-items: flex-start;
-            /* align left */
+            gap: 14px;
         }
 
-        .contact-row a {
+        .contact-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: 0.3s;
+        }
+
+        .contact-box:hover {
+            transform: translateX(6px);
+        }
+
+        .contact-box span {
+            font-size: 15px;
+            color: #ccd6f6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-box button {
+            padding: 8px 16px;
+            border: 1px solid #60a5fa;
+            background: transparent;
+            color: #60a5fa;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .contact-box button:hover {
+            background: #60a5fa;
+            color: #0a192f;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 10vh;
+            background: linear-gradient(135deg, #74ebd5, #b4c1fa);
+        }
+
+        .trust-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: -50px;
+            margin-top: 10px;
+        }
+
+        .trust-section h5 {
+            color: #ccd6f6;
+            font-size: 14px;
+        }
+
+        .payment-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .payment-logos img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            transition: 0.3s;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 35px;
+            margin-top: -20px;
+        }
+
+        .fa-brands {
+            font-size: 22px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .fa-brands:hover {
+            transform: scale(1.1);
+        }
+
+        .back {
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+
+        .end {
+            display: flex;
+            padding: 10px;
+            background: linear-gradient(90deg, #00050b42, #2564eb57);
+            color: white;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        /* LEFT PROMO BOX */
+        .left {
+            background: #2458a717;
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            margin: 20px;
+        }
+
+        .left-content {
+            text-align: center;
+        }
+
+        .left h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .left p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .explore {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: bold;
+            color: #ff3f6c;
+            font-size: 14px;
+        }
+
+        .arrow {
+            display: inline-block;
+            animation: slideArrow 1.2s infinite ease-in-out;
+        }
+
+        .arrow svg {
+            fill: #ff3f6c;
+            margin-top: 4px;
+            width: 20px;
+            height: 18px;
+        }
+
+        @keyframes slideArrow {
+            0% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(6px); opacity: 0.6; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* REVIEWS */
+        :root {
+            --primary: #64ffda;
+            --bg: #0a192f;
+            --card-bg: #112240;
+            --text: #ccd6f6;
+            --star: #ffd700;
+        }
+
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .rating-summary h1 {
+            font-size: 60px;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .stars {
+            color: var(--star);
+            font-size: 20px;
+        }
+
+        .slider-container {
+            max-width: 600px;
+            margin: 30px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .slider {
+            display: flex;
+            transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin: 3px;
+            display: inline-block;
+            font-size: 11px;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--card-bg);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .prev { left: 5px; }
+        .next { right: 5px; }
+
+        .review-form {
+            max-width: 550px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .review-form input,
+        .review-form textarea {
             width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #233554;
+            background: var(--bg);
+            color: var(--text);
+            box-sizing: border-box;
         }
 
-        .last {
+        .star-input {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .star-input span {
+            font-size: 35px;
+            cursor: pointer;
+            color: #233554;
+            margin: 0 5px;
+        }
+
+        .star-input span.active,
+        .star-input span.hovered {
+            color: var(--star);
+        }
+
+        .tags-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tag-option {
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: var(--bg);
+            border: 1px solid #233554;
+            font-size: 12px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .tag-option.active {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        .submit-btn {
             width: 100%;
-            /* full width button */
+            padding: 15px;
+            background: var(--primary);
+            color: var(--bg);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
         }
-    }
-
-    .tags a i {
-        margin-right: 8px;
-    }
-
-    .page3 {
-        min-height: 150vh;
-        background-color: #0a192f;
-    }
-
-    .pg3-hd {
-        background: linear-gradient(90deg, #60a5fa, #2563eb);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 15px;
-        flex-wrap: wrap;
-        padding: 25px;
-        margin-bottom: -25px;
-    }
-
-    .p3-para {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        color: #6884ac;
-
-    }
-
-    .p4-para {
-        color: #6884ac;
-        margin-top: 20px;
-        margin-left: 20px;
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-        padding: 10px;
-        width: 90%;
-    }
-
-
-
-    .color1 {
-        width: 90%;
-
-    }
-
-    footer {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        min-height: 10vh;
-        background: linear-gradient(135deg, #74ebd5, #b4c1fa);
-
-    }
-
-    .cont {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .last1 {
-        padding: 7px 20px;
-        border: none;
-        border-radius: 12px;
-        transition: 0.3s;
-        width: 200px;
-        background-color: #25D366;
-        color: white;
-        font-weight: bold;
-    }
-
-    .last {
-        padding: 7px 20px;
-        border: none;
-        border-radius: 12px;
-        transition: 0.3s;
-        width: 200px;
-        background-color: #05bd48;
-        color: white;
-        font-weight: bold;
-    }
-
-    .fa-whatsapp {
-        color: white !important;
-    }
-
-    .last:hover {
-
-        border: 1px solid #0099ff;
-    }
-
-    .social-icons {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        color: black;
-        transition: 0.3s;
-        margin-top: 20px;
-        flex-direction: row;
-    }
-
-    .fa-brands {
-        margin-right: 10px;
-        color: black;
-    }
-
-    .ic {
-        color: black;
-    }
-
-    .back {
-        background-color: black;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    .project {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        padding: -10px;
-    }
-
-    .end {
-        display: flex;
-        padding: 10px;
-          background: linear-gradient(90deg, #00050b42, #2564eb57);
-        color: white;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
-        font-size: 13px;
-        text-align: center;
-    }
-
-    ol {
-        width: auto;
-
-        padding: 15px;
-    }
-
-    .color {
-        display: flex;
-        justify-content: center;
-        text-align: justify;
-        padding: 10px;
-    }
-
-    .h9 {
-        margin-bottom: -20px;
-    }
-
-    .projects {
-        padding: 20px;
-        margin-top: -20px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        gap: 20px;
-        min-width: 90%;
-    }
-    
-
-    .h9 {
-        background: linear-gradient(90deg, #60a5fa, #2563eb);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .terms {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 20px;
-    }
-
-    .mayank {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .contact-row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        padding: 10px 0;
-        border-bottom: 1px solid #ffffff20;
-    }
-
-    .contact-row h5 {
-        margin: 0px;
-    }
-
-    .contact-row span {
-        font-weight: 500;
-    }
-
-    .it {
-        color: black;
-    }
-
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    h6 {
-        margin-top: -10px;
-        font-size: 9px;
-        margin-bottom: -1px;
-
-    }
-
-    .kfc {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .last0 {
-        padding: 7px 20px;
-        border: none;
-        border-radius: 12px;
-        transition: 0.3s;
-        width: 200px;
-        background-color: #2563eb;
-        color: white;
-        font-weight: bold;
-    }
-    .last5 {
-        padding: 7px 20px;
-        border: none;
-        border-radius: 12px;
-        transition: 0.3s;
-        width: 200px;
-        background-color: white;
-        color: black;
-        font-weight: bold;
-    }
-   
-    /* ===== LOADER CSS (ADD ONLY) ===== */
-
-#loader{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:#0b1d3a;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
-    overflow:hidden;
-    transition: opacity 0.8s ease;
-}
-
-.wrapper{
-    display:flex;
-    align-items:center;
-    gap:0;
-}
-
-/* LOGO */
-.logo-loader{
-    width:clamp(60px, 10vw, 120px);
-    height:clamp(60px, 10vw, 120px);
-    border-radius:50%;
-    object-fit:cover;
-    transform: scale(0.6);
-    opacity:0;
-    transition: all 1s cubic-bezier(.22,1,.36,1);
-}
-
-/* TEXT */
-.text-loader{
-    font-size:clamp(16px, 2.5vw, 32px);
-    font-weight:600;
-    color:#4fc3f7;
-    white-space:nowrap;
-    transform: translateX(-100%);
-    transition: transform 1.4s cubic-bezier(.22,1,.36,1);
-}
-
-/* MASK */
-.text-box{
-    overflow:hidden;
-}
-
-/* STEP 1 */
-.show-loader .logo-loader{
-    transform: scale(1);
-    opacity:1;
-}
-
-/* STEP 2 */
-.move-loader{
-    gap:clamp(8px, 2vw, 24px);
-}
-
-.move-loader .logo-loader{
-    transform: translateX(-30%);
-}
-
-.move-loader .text-loader{
-    transform: translateX(0);
-}
-.trust-text{
-    width: 100%;
-   padding: 20px;
-   font-size: 25px;
-   color: #16335d;
-}
-#loader {
-    will-change: opacity;
-}
-.about-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 30px;
-}
-
-.about-box {
-    background: #0f172a;
-    padding: 25px;
-    border-radius: 15px;
-    color: #ccd6f6;
-    border: 1px solid rgba(255,255,255,0.05);
-    
-    transition: 0.3s;
-}
-
-.about-box:hover {
-    transform: translateY(-8px) scale(1.02) !important;
-    background: linear-gradient(135deg, #1e3b8a, #0f172a);
-}
-
-/* headings */
-.about-box h2 {
-    margin-bottom: 10px;
-    color: #60a5fa;
-}
-
-/* text */
-.about-box p,
-.about-box li {
-    color: #9fb3d1;
-    font-size: 14px;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-}
-.b-img img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: auto;
-}
-.project {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.project-text {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
-.p3-para {
-    color: #9fb3d1;
-    font-size: 15px;
-    text-align: justify;
-    line-height: 1.6;
-}
-
-/* MEDIA GRID */
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    max-width: 100%;
-    margin: auto;
-}
-
-.project-media {
-    background: #0f172a;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.project-media img,
-.project-media video {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .project-container {
-        grid-template-columns: 1fr;
-    }
-}
-.trust-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: -50px;
-    margin-top: 10px;
-
-}
-
-.trust-section h1 {
-    color: #60a5fa3a;
-    font-size: 30px;
-    line-height: 1.5;
-    max-width: 900px;
-}
-
-.trust-section i {
-  
-    font-size: 30px;
-    margin-left: 8px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .trust-section h1 {
-        font-size: 20px;
-        padding: 10px;
-        margin-top: -30px;
-    }
-}
-.owner-section {
-    padding: 70px 20px;
-    color: #ccd6f6;
-}
-
-/* heading bigger + cleaner */
-.owner-section h2 {
-    text-align: center;
-    color: #60a5fa;
-    font-size: 28px;
-    margin-bottom: 35px;
-    letter-spacing: 1px;
-}
-
-/* MAIN CARD (NO BACKGROUND) */
-.owner-card {
-    max-width: 1000px;
-    margin: auto;
-    padding: 30px 10px;
-    border-radius: 0;
-    background: transparent;   /* ✅ removed background */
-    border: none;              /* optional clean look */
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* LEFT SIDE */
-.owner-info {
-    flex: 1;
-    min-width: 280px;
-}
-
-.owner-info p {
-    font-size: 16px;   /* bigger text */
-    color: #9fb3d1;
-    margin: 14px 0;
-    line-height: 1.7;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.owner-info i {
-    color: #60a5fa;
-    font-size: 18px;
-}
-
-/* RIGHT SIDE */
-.owner-contact {
-    flex: 1;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-/* CONTACT BOX (clean minimal style) */
-.contact-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: 0.3s;
-}
-
-.contact-box:hover {
-    transform: translateX(6px);
-}
-
-.contact-box span {
-    font-size: 15px;
-    color: #ccd6f6;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* BUTTON */
-.contact-box button {
-    padding: 8px 16px;
-    border: 1px solid #60a5fa;
-    background: transparent;   /* ✅ no background */
-    color: #60a5fa;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: 0.3s;
-}
-
-.contact-box button:hover {
-    background: #60a5fa;
-    color: #0a192f;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .owner-card {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .contact-box {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .contact-box button {
-        width: 100%;
-    }
-}
-
-.left{
-  background: #2458a717;
-  border-radius: 12px;
-  padding: 20px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 180px;
-  margin: 20px;
-}
-
-.left-content{
-  text-align: center;
-}
-
-.left h2{
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.left p{
-  font-size: 14px;
-  margin-bottom: 12px;
-  opacity: 0.8;
-}
-
-/* TEXT + ARROW */
-.explore{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: bold;
-  color: #ff3f6c;
-  font-size: 14px;
-}
-
-/* 🔥 GOD LEVEL ANIMATION */
-.arrow{
-  display: inline-block;
-  animation: slideArrow 1.2s infinite ease-in-out;
- 
-}
-.arrow svg{
-    fill: #ff3f6c;
-    margin-top: 4px;
-    width: 20px;
-  height: 18px;
-}
-
-/* KEYFRAMES */
-@keyframes slideArrow{
-  0%   { transform: translateX(0); opacity: 1; }
-  50%  { transform: translateX(6px); opacity: 0.6; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-
-/* 📱 RESPONSIVE */
-@media(max-width:768px){
-  .left{
-    min-height: 120px;
-    padding: 15px;
-  }
-
-  .left h2{
-    font-size: 16px;
-  }
-
-  .left p{
-    font-size: 12px;
-  }
-
-  .explore{
-    font-size: 13px;
-  }
-}
-/* RIGHT SIDE GRID */
-.right{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-  gap: 15px;
-}
-.whatsapp-container {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  display: flex;
-  align-items: flex-end;
-  gap: 12px;
-  z-index: 9999;
-}
-
-.chat-box {
-  background: white;
-  color: black;
-  padding: 12px 16px;
-  border-radius: 18px;
-  max-width: 240px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-
-  position: relative;
-
-  transform: translateY(120px);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.chat-box.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.chat-header {
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.online {
-  width: 8px;
-  height: 8px;
-  background: #25D366;
-  border-radius: 50%;
-}
-
-.chat-text {
-  font-size: 14px;
-}
-
-/* WhatsApp button */
-.whatsapp-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-}
-
-.whatsapp-btn img {
-  width: 30px;
-}
-
-/* Notification badge */
-.badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-
-  background: #ff3b30;
-  color: white;
-
-  font-size: 12px;
-  font-weight: bold;
-
-  min-width: 18px;
-  height: 18px;
-  padding: 2px 5px;
-
-  border-radius: 50%;
-  display: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-
-  animation: pop 0.3s ease;
-}
-.icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 35px;
-    margin-top: -20px;
-}
-.fa-brands{
-    font-size: 22px;
-    color: white;
-   transition: 0.3s;
-}
-.fa-brands:hover{
-   transform: scale(1.05);
-}
-
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-.payment-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-.payment-logos img {
-  height: 40px;     /* perfect size */
-  width: auto;
-  object-fit: contain;
-  transition: 0.3s;
-}
-</style>
+
+        #successMsg {
+            position: fixed;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--bg);
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: 0.6s;
+            z-index: 1000;
+            font-weight: bold;
+        }
+
+        /* PREMIUM BUTTON */
+        .btn-premium {
+            position: relative;
+            width: 150px;
+            height: 50px;
+            background-color: #0a192f;
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+            box-shadow: inset 0 0 0 1px rgba(96,165,250,0.25), 0 8px 20px -5px rgba(0,0,0,0.6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0) 20%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0) 80%, transparent);
+            transform: skewX(-25deg);
+            animation: premium-shine 4s infinite ease-in-out;
+        }
+
+        .btn-premium::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            opacity: 0.3;
+            z-index: 2;
+        }
+
+        @keyframes premium-shine {
+            0% { left: -150%; }
+            25% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            background-color: #0e2240;
+            box-shadow: inset 0 0 0 1px rgba(96,165,250,0.6), 0 12px 25px -5px rgba(37,99,235,0.4);
+        }
+
+        .btn-premium:hover::before {
+            animation-duration: 1.5s;
+        }
+
+        .btn-premium:active {
+            transform: scale(0.96) translateY(0);
+        }
+
+        /* ARROW */
+        .arrow-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .chevron {
+            margin-right: -20px;
+            width: 12px;
+            height: 12px;
+            border-right: 2px solid #9ac4f6;
+            border-bottom: 2px solid #f4f6f9;
+            transform: rotate(45deg);
+            animation: arrow-float 2s infinite ease-in-out;
+        }
+
+        @keyframes arrow-float {
+            0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.5; }
+            50% { transform: rotate(45deg) translate(5px,5px); opacity: 1; filter: drop-shadow(0 0 20px white); }
+        }
+
+        /* WHATSAPP WIDGET */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .chat-box {
+            background: white;
+            color: black;
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 240px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .chat-box.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chat-header {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .online {
+            width: 8px;
+            height: 8px;
+            background: #25D366;
+            border-radius: 50%;
+        }
+
+        .chat-text {
+            font-size: 14px;
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .whatsapp-btn img {
+            width: 30px;
+        }
+
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff3b30;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            min-width: 18px;
+            height: 18px;
+            padding: 2px 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            animation: pop 0.3s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0); }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* LOADER */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #0b1d3a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            overflow: hidden;
+            transition: opacity 0.8s ease;
+            will-change: opacity;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .logo-loader {
+            width: clamp(60px, 10vw, 120px);
+            height: clamp(60px, 10vw, 120px);
+            border-radius: 50%;
+            object-fit: cover;
+            transform: scale(0.6);
+            opacity: 0;
+            transition: all 1s cubic-bezier(.22,1,.36,1);
+        }
+
+        .text-loader {
+            font-size: clamp(16px, 2.5vw, 32px);
+            font-weight: 600;
+            color: #4fc3f7;
+            white-space: nowrap;
+            transform: translateX(-100%);
+            transition: transform 1.4s cubic-bezier(.22,1,.36,1);
+        }
+
+        .text-box {
+            overflow: hidden;
+        }
+
+        .show-loader .logo-loader {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .move-loader {
+            gap: clamp(8px, 2vw, 24px);
+        }
+
+        .move-loader .logo-loader {
+            transform: translateX(-30%);
+        }
+
+        .move-loader .text-loader {
+            transform: translateX(0);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .tags { display: none; }
+            .menu-btn { display: block; }
+
+            .pg1-heading { text-align: center; }
+            .pg1-para { text-align: center; }
+            .pg1-btn { display: flex; justify-content: center; margin-top: 25px; }
+            .logo { font-size: 18px; }
+
+            .container2 {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .owner-card {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .contact-box button {
+                width: 100%;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left { min-height: 120px; padding: 15px; }
+            .left h2 { font-size: 16px; }
+            .left p { font-size: 12px; }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <nav>
-        <div class="logo">Tuljai exim & services</div>
-
+        <div class="logo">Tuljai Exim & Services</div>
         <div class="tags">
             <a href="#page1"><i class="fa-solid fa-house"></i> Home</a>
             <a href="#page2"><i class="fa-solid fa-briefcase"></i> Services</a>
-            <a href="#page3"><i class="fa-solid fa-info-circle"></i> About us</a>
+            <a href="#page3"><i class="fa-solid fa-info-circle"></i> About Us</a>
             <a href="#owner"><i class="fa-solid fa-envelope"></i> Contact</a>
         </div>
-        <label for="menu-toggle" class="menu-btn">☰</label>
+        <label for="menu-toggle" class="menu-btn" aria-label="Open menu">☰</label>
     </nav>
+
     <input type="checkbox" id="menu-toggle">
-
     <div class="sidebar">
-        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;">
-            <i class="fa-solid fa-house"></i> Home
-        </a>
-        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;">
-            <i class="fa-solid fa-briefcase"></i> Services
-        </a>
-        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;">
-            <i class="fa-solid fa-info-circle"></i> About us
-        </a>
-        <a href="#owner" onclick="document.getElementById('menu-toggle').checked=false;">
-    <i class="fa-solid fa-envelope"></i> Contact
-</a>
+        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-briefcase"></i> Services</a>
+        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-info-circle"></i> About Us</a>
+        <a href="#owner" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-envelope"></i> Contact</a>
     </div>
-    
-    <section class="page1" id="page1" >
-       
-</div>
+
+    <!-- PAGE 1: HERO -->
+    <section class="page1" id="page1">
         <div class="container">
-
             <div class="pg1-image">
-                <img src="shri logo.png" alt="logo">
+                <img src="shri logo.png" alt="Tuljai Exim & Services logo">
             </div>
-
             <div class="pg1-heading">
-                <h1>Tuljai exim & services</h1>
+                <h1>Tuljai Exim & Services</h1>
                 <p class="pg1-para">
-                    <b>Welcome to tuljai exim & services</b>
-                    Tuljai Exim and Services offers export, solar energy and electrical solutions, focusing on quality,
-                    innovation, and reliable service to meet diverse client needs.
-                   
-   <b> Affordable • Trusted • Professional Services • Solar • Electrical • Export </b>
-
+                    <b>Welcome to Tuljai Exim & Services — </b>
+                    your trusted partner for export, solar energy, and electrical solutions.
+                    We focus on quality, innovation, and reliable service to meet diverse client needs.
+                    <br><br>
+                    <b>Affordable • Trusted • Professional Services • Solar • Electrical • Export</b>
                 </p>
-
-                <!-- <div class="pg1-btn">
-                    <a href="#page2"><button>Explore</button></a>
-                </div> -->
-               
-
+                <div class="pg1-btn">
+                    <a href="#page2">
+                        <button class="btn-premium">
+                            Explore Now
+                            <div class="arrow-container">
+                                <span class="chevron"></span>
+                            </div>
+                        </button>
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
 
-        </section>
-    </div>
+    <!-- PAGE 2: SERVICES -->
     <div class="page2" id="page2">
         <div class="pg2-heading">
-            <h1>Services/product</h1>
+            <h1>Services / Products</h1>
         </div>
-         <div class="left">
-  <div class="left-content" data-aos="fade-right">
-    <h2>Trending Products</h2>
-    <p>Best deals for you 🔥</p>
 
-    <div class="explore">
-      Explore Now
-      <span class="arrow">
-          <svg viewBox="0 0 640 640" width="16" height="16">
-      <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
-    </svg>
-      </span>
-    </div>
+        <div class="left">
+            <div class="left-content" data-aos="fade-right">
+                <h2>Trending Products</h2>
+                <p>Best deals for you 🔥</p>
+                <div class="explore">
+                    Explore Now
+                    <span class="arrow">
+                        <svg viewBox="0 0 640 640" width="16" height="16">
+                            <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
 
-  </div>
-</div>
         <div class="container2">
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="solar1.jpg" width="200px">
-                </div>
+                <div class="b-img"><img src="solar1.jpg" alt="Solar street light" loading="lazy"></div>
                 <div class="b-heading">
-                    <h2>Solar street light</h2>
-                    <p class="b-para">Smart, eco-friendly lighting powered by the sun—zero electricity cost, high
-                        performance, and built for long-term reliability</p>
+                    <h2>Solar Street Light</h2>
+                    <p class="b-para">Smart, eco-friendly lighting powered by the sun — zero electricity cost, high performance, and built for long-term reliability.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="solar home.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="solar home.webp" alt="Home solar system" loading="lazy"></div>
                 <div class="b-heading">
-                    <h2>Home Solar system</h2>
-                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce
-                        electricity costs and support a cleaner, sustainable future</p>
+                    <h2>Home Solar System</h2>
+                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce electricity costs and support a cleaner, sustainable future.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="solar street traffic.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="solar street traffic.webp" alt="Smart solar traffic signals" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Smart Solar Traffic Signals</h2>
-                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic
-                        management</p>
+                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic management.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="man.png" width="200px">
-                </div>
+                <div class="b-img"><img src="man.png" alt="Technician service" loading="lazy"></div>
                 <div class="b-heading">
-                    <h2>Get a Technicain for Your Problem</h2>
-                    <p class="b-para">Get expert technical support for fast, reliable, and efficient solutions tailored to your needs.</p>
+                    <h2>Get a Technician for Your Problem</h2>
+                    <p class="b-para">Expert technical support for fast, reliable, and efficient solutions tailored to your needs.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem solution"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="corn.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="corn.webp" alt="Corn export" loading="lazy"></div>
                 <div class="b-heading">
-                    <h2>Corn/maize</h2>
-                    <p class="b-para">We provide high-quality corn for global markets, ensuring freshness, consistency,
-                        and reliable supply. Our export services meet international standards, making our corn ideal for
-                        various food and industrial uses.</p>
+                    <h2>Corn / Maize</h2>
+                    <p class="b-para">High-quality corn for global markets, ensuring freshness, consistency, and reliable supply. Our export services meet international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="sugar.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="sugar.webp" alt="Sugar export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Sugar</h2>
-                    <p class="b-para">We supply high-quality sugar for global markets, ensuring purity, consistency, and
-                        timely delivery. Our export solutions are designed to meet international standards and customer
-                        requirements</p>
+                    <p class="b-para">High-quality sugar for global markets, ensuring purity, consistency, and timely delivery meeting international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="rice.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="rice.webp" alt="Rice export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Rice</h2>
-                    <p class="b-para">We offer premium quality rice with excellent taste and nutritional value. Sourced
-                        and processed with care, our rice is ideal for global distribution with assured quality and
-                        reliability</p>
+                    <p class="b-para">Premium quality rice with excellent taste and nutritional value. Carefully sourced and processed for global distribution.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="wheat.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="wheat.webp" alt="Wheat export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Wheat</h2>
-                    <p class="b-para">Our wheat exports deliver superior quality grains suitable for various food
-                        applications. With a focus on freshness and consistency, we ensure dependable supply for
-                        international markets</p>
+                    <p class="b-para">Superior quality grains suitable for various food applications. Dependable supply for international markets.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="jawar.jpg" width="200px">
-                </div>
+                <div class="b-img"><img src="jawar.jpg" alt="Jawar export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Jawar</h2>
-                    <p class="b-para">We offer premium quality jowar (sorghum) known for its nutritional value and
-                        purity. Carefully sourced and processed, our jowar meets international standards, ensuring
-                        reliable supply for global markets</p>
+                    <p class="b-para">Premium quality jowar (sorghum) known for its nutritional value and purity. Carefully sourced and processed to international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img">
-                    <img src="jerra.webp" width="200px">
-                </div>
+                <div class="b-img"><img src="jerra.webp" alt="Jeera export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Jeera</h2>
-                    <p class="b-para">We offer premium quality jeera (cumin seeds) known for its rich aroma, strong flavor, and high nutritional value. Carefully sourced from trusted farms and hygienically processed, our jeera meets international quality standards, ensuring purity, consistency, and a reliable supply for global markets.</p>
+                    <p class="b-para">Premium quality jeera (cumin seeds) known for rich aroma, strong flavor, and high nutritional value. Hygienically processed to meet international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>enquire
-                            now</button></a>
-
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about product with you. Please let me know a convenient time"><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
-        
-                
 
         </div>
     </div>
-   <div class="page3" id="page3">
 
-    <div class="pg3-hd" >
-        <h1 >About Us</h1>
-    </div>
-
-    <div class="about-container">
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-building about-icon"></i>
-        <h2>Who We Are</h2>
-        <p>
-            Tuljai Exim & Services is a modern and growing company focused on exports,
-            solar energy, and electrical solutions. We aim to deliver high-quality,
-            reliable, and innovative services that create long-term value for our clients.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-eye about-icon"></i>
-        <h2>Our Vision</h2>
-        <p>
-            To become a trusted global provider of export and renewable energy solutions,
-            contributing to a sustainable and eco-friendly future.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-bullseye about-icon"></i>
-        <h2>Our Mission</h2>
-        <p>
-            We are committed to delivering efficient, affordable, and high-quality
-            solutions while maintaining customer satisfaction and long-term relationships.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-solar-panel about-icon"></i>
-        <h2>Our Services</h2>
-        <p>
-            We provide solar street lights, home solar systems, smart traffic signals,
-            and expert technical services for electrical and solar needs.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-wheat-awn about-icon"></i>
-        <h2>Export Quality</h2>
-        <p>
-            Our agricultural products like rice, wheat, corn, sugar, and spices are
-            carefully sourced and processed to meet international quality standards.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-thumbs-up about-icon"></i>
-        <h2>Why Choose Us</h2>
-        <p>
-            ✔ High-quality products<br>
-            ✔ Trusted & transparent service<br>
-            ✔ Timely delivery<br>
-            ✔ Customer-first approach
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-gears about-icon"></i>
-        <h2>Our Strength</h2>
-        <p>
-            Strong technical knowledge, reliable supply chain, and a dedicated team
-            help us deliver consistent and dependable solutions.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-handshake about-icon"></i>
-        <h2>Customer Commitment</h2>
-        <p>
-            We focus on understanding client needs and providing customized solutions
-            that ensure satisfaction and long-term partnerships.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-rocket about-icon"></i>
-        <h2>Future Goals</h2>
-        <p>
-            Expanding globally in exports and renewable energy while adopting the
-            latest technologies for better efficiency and sustainability.
-        </p>
-    </div>
-
-    <div class="about-box" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-star about-icon"></i>
-        <h2>Our Values</h2>
-        <p>
-            We believe in honesty, quality, and innovation. Our core values drive us to
-            deliver reliable services, maintain transparency, and build strong trust
-            with our customers and partners.
-        </p>
-    </div>
-
-</div>
-<div class="project" id="projects">
-
-    <h1 class="h9">Our project</h1>
-
-    <!-- Paragraph FIRST (under title) -->
-    <div class="project-text">
-        <p class="p3-para">
-            We are currently executing the installation of solar power plant projects in Khavda,
-            Gujarat, and Harba, Rajasthan, with a strong focus on precision, efficiency, and long-term
-            reliability. The ongoing work includes panel mounting, electrical wiring, and system testing,
-            all being carried out in accordance with industry standards
-        </p>
-    </div>
-
-    <!-- MEDIA BELOW PARAGRAPH -->
-    <div class="project-container">
-
-        <div class="project-media" data-aos="zoom-in">
-            <img src="project1.jpeg" alt="Project Image">
+    <!-- PAGE 3: ABOUT -->
+    <div class="page3" id="page3">
+        <div class="pg3-hd">
+            <h1>About Us</h1>
         </div>
 
-        <div class="project-media" data-aos="zoom-in">
-            <video autoplay muted loop>
-                <source src="sol video.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="project-media" data-aos="zoom-in">
-            <img src="pro img2.jpeg" alt="Project Image 2">
-        </div>
-
-    </div>
-
-</div>
-       
-
-    <a href="#page2">
-        <div class="back"> <i class="fa-solid fa-arrow-up"></i>Back to top</div>
-    </a>
-  <a href="#owner"></a> <div class="owner-section" id="owner">
-
-    <h2>About Owner</h2>
-
-    <div class="owner-card">
-
-        <!-- LEFT SIDE -->
-        <div class="owner-info">
-
-            <p>
-                <i class="fa-solid fa-user"></i>
-                <b>Name:</b> Shrinath Kamble
-            </p>
-
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                <b>Live in:</b> Mumbai, India
-            </p>
-
-            <p>
-                <i class="fa-solid fa-graduation-cap"></i>
-                Diploma in Solar & Electrical Engineering in 📍solapur
-            </p>
-
-            <p>
-                <i class="fa-solid fa-briefcase"></i>
-                Founder of Tuljai Exim & Services
-            </p>
-
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="owner-contact">
-
-            <div class="contact-box">
-                <span>
-                    <i class="fa-solid fa-phone"></i>
-                    +91 8605408258
-                </span>
-                <a href="tel:+918605408258">
-                    <button>Call</button>
-                </a>
+        <div class="about-container">
+            <div class="about-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-building"></i>
+                <h2>Who We Are</h2>
+                <p>Tuljai Exim & Services is a modern and growing company focused on exports, solar energy, and electrical solutions. We deliver high-quality, reliable, and innovative services that create long-term value for our clients.</p>
             </div>
-
-            <div class="contact-box">
-                <span>
-                    <i class="fa-solid fa-phone"></i>
-                    +91 9356824656
-                </span>
-                <a href="tel:+919356824656">
-                    <button>Call</button>
-                </a>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-eye"></i>
+                <h2>Our Vision</h2>
+                <p>To become a trusted global provider of export and renewable energy solutions, contributing to a sustainable and eco-friendly future.</p>
             </div>
-
-            <div class="contact-box">
-                <span>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    WhatsApp Chat
-                </span>
-                <a href="https://wa.me/9356824656" target="_blank">
-                    <button>Chat</button>
-                </a>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-bullseye"></i>
+                <h2>Our Mission</h2>
+                <p>We are committed to delivering efficient, affordable, and high-quality solutions while maintaining customer satisfaction and long-term relationships.</p>
             </div>
-
-            <div class="contact-box">
-                <span>
-                    <i class="fa-solid fa-envelope"></i>
-                    Email Us
-                </span>
-                <a href="mailto:tuljaieximandservices@gmail.com">
-                    <button>Mail</button>
-                </a>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-solar-panel"></i>
+                <h2>Our Services</h2>
+                <p>We provide solar street lights, home solar systems, smart traffic signals, and expert technical services for electrical and solar needs.</p>
             </div>
-            <div class="contact-box">
-                <span>
-                    Terms & services
-                </span>
-                <a href="terms.html">
-                    <button>Terms & services</button>
-                </a>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-wheat-awn"></i>
+                <h2>Export Quality</h2>
+                <p>Our agricultural products like rice, wheat, corn, sugar, and spices are carefully sourced and processed to meet international quality standards.</p>
+            </div>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <h2>Why Choose Us</h2>
+                <p>✔ High-quality products<br>✔ Trusted & transparent service<br>✔ Timely delivery<br>✔ Customer-first approach</p>
+            </div>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-gears"></i>
+                <h2>Our Strength</h2>
+                <p>Strong technical knowledge, reliable supply chain, and a dedicated team help us deliver consistent and dependable solutions.</p>
+            </div>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-handshake"></i>
+                <h2>Customer Commitment</h2>
+                <p>We focus on understanding client needs and providing customized solutions that ensure satisfaction and long-term partnerships.</p>
+            </div>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-rocket"></i>
+                <h2>Future Goals</h2>
+                <p>Expanding globally in exports and renewable energy while adopting the latest technologies for better efficiency and sustainability.</p>
+            </div>
+            <div class="about-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-star"></i>
+                <h2>Our Values</h2>
+                <p>We believe in honesty, quality, and innovation. Our core values drive us to deliver reliable services, maintain transparency, and build strong trust with our customers and partners.</p>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="project" id="projects">
+            <h1 class="h9">Our Projects</h1>
+            <div class="project-text">
+                <p class="p3-para">
+                    We are currently executing solar power plant projects in Khavda, Gujarat, and Harba, Rajasthan,
+                    with a strong focus on precision, efficiency, and long-term reliability. The ongoing work includes
+                    panel mounting, electrical wiring, and system testing — all carried out in accordance with industry standards.
+                </p>
+            </div>
+            <div class="project-container">
+                <div class="project-media" data-aos="zoom-in">
+                    <img src="project1.jpeg" alt="Project 1" loading="lazy">
                 </div>
-
-                 <div class="contact-box">
-                <span>
-                  Payments Accepted
-                </span>
-                <div class="payment-logos">
-                    
-    <img src="https://img.icons8.com/color/96/visa.png" alt="Visa">
-    <img src="https://img.icons8.com/color/96/mastercard.png" alt="Mastercard">
-    <img src="https://img.icons8.com/color/96/paypal.png" alt="PayPal">
-    <img src="https://img.icons8.com/color/96/bhim.png" alt="UPI">
-  </div>
-            </div>
-                
-                <div class="trust-section">
-                    <h5>"Dont worry trust us"<br>
-                    We are not spam!</h5>
+                <div class="project-media" data-aos="zoom-in">
+                    <video autoplay muted loop playsinline>
+                        <source src="sol video.mp4" type="video/mp4">
+                    </video>
                 </div>
-            
-
+                <div class="project-media" data-aos="zoom-in">
+                    <img src="pro img2.jpeg" alt="Project 2" loading="lazy">
+                </div>
+            </div>
         </div>
 
-    </div>
-  
+        <a href="#page2">
+            <div class="back"><i class="fa-solid fa-arrow-up"></i> Back to top</div>
+        </a>
 
-</div>
+        <!-- OWNER / CONTACT -->
+        <div class="owner-section" id="owner">
+            <h2>About the Owner</h2>
+            <div class="owner-card">
+                <div class="owner-info">
+                    <p><i class="fa-solid fa-user"></i><b>Name:</b> Shrinath Kamble</p>
+                    <p><i class="fa-solid fa-location-dot"></i><b>Location:</b> Mumbai, India</p>
+                    <p><i class="fa-solid fa-graduation-cap"></i>Diploma in Solar & Electrical Engineering — Solapur</p>
+                    <p><i class="fa-solid fa-briefcase"></i>Founder of Tuljai Exim & Services</p>
+                </div>
+                <div class="owner-contact">
+                    <div class="contact-box">
+                        <span><i class="fa-solid fa-phone"></i> +91 8605408258</span>
+                        <a href="tel:+918605408258"><button>Call</button></a>
+                    </div>
+                    <div class="contact-box">
+                        <span><i class="fa-solid fa-phone"></i> +91 9356824656</span>
+                        <a href="tel:+919356824656"><button>Call</button></a>
+                    </div>
+                    <div class="contact-box">
+                        <span><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</span>
+                        <a href="https://wa.me/9356824656" target="_blank" rel="noopener noreferrer"><button>Chat</button></a>
+                    </div>
+                    <div class="contact-box">
+                        <span><i class="fa-solid fa-envelope"></i> Email Us</span>
+                        <a href="mailto:tuljaieximandservices@gmail.com"><button>Mail</button></a>
+                    </div>
+                    <div class="contact-box">
+                        <span>Terms & Services</span>
+                        <a href="terms.html"><button>View Terms</button></a>
+                    </div>
+                    <div class="contact-box">
+                        <span>Payments Accepted</span>
+                        <div class="payment-logos">
+                            <img src="https://img.icons8.com/color/96/visa.png" alt="Visa">
+                            <img src="https://img.icons8.com/color/96/mastercard.png" alt="Mastercard">
+                            <img src="https://img.icons8.com/color/96/paypal.png" alt="PayPal">
+                            <img src="https://img.icons8.com/color/96/bhim.png" alt="UPI">
+                        </div>
+                    </div>
+                    <div class="trust-section">
+                        <h5>"Don't worry, trust us" — We are not spam!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    </footer>
-     <div class="icons">
-    <i class="fa-brands fa-instagram"></i>
-    <i class="fa-brands fa-facebook"></i>
-    <i class="fa-brands fa-youtube"></i>
-    <i class="fa-brands fa-x-twitter"></i>
-</div>
-    <div class="end" >
-        <h5> Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</h6>
-    </div>
-
+        <!-- REVIEWS -->
     
- <!-- LOADER START -->
-<div id="loader">
-    <div class="wrapper" id="wrapper">
-        <img src="shri logo.png" class="logo-loader" alt="logo">
-        <div class="text-box">
-            <div class="text-loader">Tuljai Exim & Services</div>
+          
+
+    <!-- SOCIAL ICONS -->
+    <div class="icons">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+
+    <div class="end">
+        <p><b>Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</b></p>
+    </div>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="wrapper" id="wrapper">
+            <img src="shri logo.png" class="logo-loader" alt="logo">
+            <div class="text-box">
+                <div class="text-loader">Tuljai Exim & Services</div>
+            </div>
         </div>
     </div>
-</div>
-<!-- WhatsApp Widget -->
-<div class="whatsapp-container">
 
- <div class="chat-box" id="chatBox">
-  <div class="chat-header">
-    <div class="online"></div>
-   Confused?
-  </div>
-  <div class="chat-text" id="chatText">
-   
-  </div>
-</div>
+    <!-- WHATSAPP WIDGET -->
+    <div class="whatsapp-container">
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="online"></div>
+                Confused?
+            </div>
+            <div class="chat-text" id="chatText"></div>
+        </div>
+        <div class="whatsapp-btn" onclick="openWhatsApp()" role="button" aria-label="Chat on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <div class="badge" id="badge">1</div>
+        </div>
+    </div>
 
-  <div class="whatsapp-btn" onclick="openWhatsApp()">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-    <div class="badge" id="badge">1</div>
-  </div>
+    <!-- FIREBASE REVIEWS -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy }
+        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-</div>
-<!-- LOADER END -->
- <script>
-window.addEventListener("load", function(){
+        // ADD YOUR FIREBASE CONFIG HERE:
+        // const firebaseConfig = { apiKey: "...", authDomain: "...", projectId: "..." };
+        // const app = initializeApp(firebaseConfig);
+        // const db = getFirestore(app);
 
-    const wrapper = document.getElementById("wrapper");
-    const loader = document.getElementById("loader");
+        let reviews = [];
+        let currentIndex = 0;
+        let selectedRating = 0;
+        let selectedTags = [];
 
-    // Step 1: logo entry
-    setTimeout(() => {
-        wrapper.classList.add("show-loader");
-    }, 200);
+        const userId = localStorage.getItem("tuljai_uid") || Math.random().toString(36).substring(7);
+        localStorage.setItem("tuljai_uid", userId);
 
-    // Step 2: move + text reveal
-    setTimeout(() => {
-        wrapper.classList.add("move-loader");
-    }, 1200);
+        const stars = document.querySelectorAll("#starInput span");
+        stars.forEach((star, index) => {
+            star.addEventListener("mouseover", () => stars.forEach((s, i) => s.classList.toggle("hovered", i <= index)));
+            star.addEventListener("mouseout", () => stars.forEach(s => s.classList.remove("hovered")));
+            star.addEventListener("click", () => {
+                selectedRating = index + 1;
+                stars.forEach((s, i) => s.classList.toggle("active", i < selectedRating));
+            });
+        });
 
-    // Step 3: remove loader
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 800);
-    }, 3200);
+        const suggestions = [
+            "☀️ Solar Expertise", "🛠️ Professional Install", "⚡ High Efficiency",
+            "💰 Great ROI", "🌱 Eco-Friendly", "🔧 Reliable Support",
+            "📝 Easy Subsidy", "🤝 Trusted Partner", "📞 Quick Response", "✨ Neat Wiring"
+        ];
 
-});
-</script>
-<!-- 1. AOS Library -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        suggestions.forEach(text => {
+            const tag = document.createElement("div");
+            tag.className = "tag-option";
+            tag.innerText = text;
+            tag.onclick = () => {
+                if (selectedTags.includes(text)) {
+                    selectedTags = selectedTags.filter(t => t !== text);
+                    tag.classList.remove("active");
+                } else {
+                    selectedTags.push(text);
+                    tag.classList.add("active");
+                }
+            };
+            document.getElementById("tagsContainer").appendChild(tag);
+        });
 
-<!-- 2. Your JS -->
-<script>
-  AOS.init({
-     duration: 1400,   // slower animation
-  once: false,       // animate only once (looks smoother)
-  offset: 120,      // starts at better timing
-  delay: 100 
-  });
- 
-</script>
-<script>
-function openWhatsApp() {
-  let phone = "918605408258";
-  let message = "Hi I need help!";
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
-}
+        // Uncomment when Firebase config is added:
+        // window.submitReview = async function() { ... }
+        // window.deleteReview = async function(id) { ... }
+        // async function loadReviews() { ... }
 
-window.addEventListener("load", () => {
-  const chatBox = document.getElementById("chatBox");
-  const badge = document.getElementById("badge");
-  const chatText = document.getElementById("chatText");
+        function renderSlides() {
+            const slider = document.getElementById("slider");
+            slider.innerHTML = reviews.length
+                ? ""
+                : `<div class='slide'><div class='review-card'>No reviews yet. Be the first!</div></div>`;
+            reviews.forEach(r => {
+                const tagsHTML = (r.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
+                const deleteBtn = r.userId === userId
+                    ? `<button onclick="deleteReview('${r.id}')" style="margin-top:10px;background:none;color:#ff4d4d;border:1px solid #ff4d4d;cursor:pointer;border-radius:6px;padding:4px 10px;">Delete</button>`
+                    : "";
+                slider.innerHTML += `
+                    <div class="slide">
+                        <div class="review-card">
+                            <strong style="color:var(--primary)">${r.name}</strong>
+                            <div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
+                            <p>"${r.text}"</p>
+                            <div>${tagsHTML}</div>
+                            ${deleteBtn}
+                        </div>
+                    </div>`;
+            });
+            currentIndex = 0;
+            moveSlide();
+        }
 
-  const text = "Need help? We’re online 👋";
+        function updateAverage() {
+            if (!reviews.length) return;
+            const avg = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
+            document.getElementById("avgRating").innerText = avg;
+            document.getElementById("avgStars").innerText = "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
+        }
 
-  let i = 0;
+        function moveSlide() {
+            document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 
-  function type() {
-    if (i < text.length) {
-      chatText.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, 50);
-    }
-  }
+        window.nextSlide = () => {
+            if (reviews.length > 1) { currentIndex = (currentIndex + 1) % reviews.length; moveSlide(); }
+        };
+        window.prevSlide = () => {
+            if (reviews.length > 1) { currentIndex = (currentIndex - 1 + reviews.length) % reviews.length; moveSlide(); }
+        };
 
-  function showChat() {
-    chatText.innerHTML = "";
-    i = 0;
+        document.getElementById("submitBtn").onclick = () => window.submitReview && window.submitReview();
+        document.getElementById("nextBtn").onclick = () => window.nextSlide();
+        document.getElementById("prevBtn").onclick = () => window.prevSlide();
+        setInterval(window.nextSlide, 5000);
 
-    badge.style.display = "none";
-    chatBox.style.display = "block";
+        renderSlides();
+        updateAverage();
+    </script>
 
-    setTimeout(() => chatBox.classList.add("show"), 100);
+    <!-- LOADER SCRIPT -->
+    <script>
+        window.addEventListener("load", function () {
+            const wrapper = document.getElementById("wrapper");
+            const loader = document.getElementById("loader");
+            setTimeout(() => wrapper.classList.add("show-loader"), 200);
+            setTimeout(() => wrapper.classList.add("move-loader"), 1200);
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                setTimeout(() => loader.style.display = "none", 800);
+            }, 3200);
+        });
+    </script>
 
-    type();
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1400, once: false, offset: 120, delay: 100 });
+    </script>
 
-    // hide after 10 sec
-    setTimeout(hideChat, 10000);
-  }
+    <!-- WHATSAPP CHAT SCRIPT -->
+    <script>
+        function openWhatsApp() {
+            const phone = "918605408258";
+            const message = "Hi, I need help!";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+        }
 
-  function hideChat() {
-    chatBox.classList.remove("show");
+        window.addEventListener("load", () => {
+            const chatBox = document.getElementById("chatBox");
+            const badge = document.getElementById("badge");
+            const chatText = document.getElementById("chatText");
+            const text = "Need help? We're online 👋";
 
-    setTimeout(() => {
-      chatBox.style.display = "none";
-      badge.style.display = "block";
-    }, 500);
-  }
+            function type(i) {
+                if (i < text.length) {
+                    chatText.innerHTML += text.charAt(i);
+                    setTimeout(() => type(i + 1), 50);
+                }
+            }
 
-  // ✅ WAIT 8 seconds before starting anything
-  setTimeout(() => {
+            function showChat() {
+                chatText.innerHTML = "";
+                badge.style.display = "none";
+                chatBox.style.display = "block";
+                setTimeout(() => chatBox.classList.add("show"), 100);
+                type(0);
+                setTimeout(hideChat, 10000);
+            }
 
-    showChat(); // first show after 8 sec
+            function hideChat() {
+                chatBox.classList.remove("show");
+                setTimeout(() => {
+                    chatBox.style.display = "none";
+                    badge.style.display = "flex";
+                }, 500);
+            }
 
-    // ✅ LOOP: show every 20 sec (you can change this)
-    setInterval(() => {
-      if (chatBox.style.display === "none") {
-        showChat();
-      }
-    }, 20000);
+            setTimeout(() => {
+                showChat();
+                setInterval(() => {
+                    if (chatBox.style.display === "none") showChat();
+                }, 20000);
+            }, 8000);
+        });
+    </script>
 
-  }, 8000); // 👈 8 seconds delay
-});
-</script>
 </body>
-
 </html>
