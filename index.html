@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tuljai Exim & Services offers solar solutions, exports, and electrical services with high quality and reliability.">
+    <meta name="description"
+        content="Tuljai Exim & Services offers solar solutions, exports, and electrical services with high quality and reliability.">
     <meta name="keywords" content="solar, export, electrical, Tuljai, services, India">
     <title>Tuljai Exim & Services</title>
 
@@ -100,7 +102,7 @@
             z-index: 999;
         }
 
-        #menu-toggle:checked ~ .sidebar {
+        #menu-toggle:checked~.sidebar {
             right: 0;
         }
 
@@ -190,16 +192,16 @@
             border-radius: 15px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.4s cubic-bezier(.22,1,.36,1),
-                        box-shadow 0.4s ease,
-                        background 0.3s ease;
+            transition: transform 0.4s cubic-bezier(.22, 1, .36, 1),
+                box-shadow 0.4s ease,
+                background 0.3s ease;
             color: white;
         }
 
         .box1:hover {
             transform: translateY(-10px) scale(1.03) !important;
             background: linear-gradient(135deg, #1e3b8a, #0f172a);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(28,52,81,0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(28, 52, 81, 0.3);
         }
 
         .b-img img {
@@ -233,13 +235,22 @@
             width: 150px;
             border-radius: 12px;
             border: none;
-            background:linear-gradient(to right, #84cc16, #22c55e);
+            background: linear-gradient(to bottom, #7ce04d 0%, #24a141 100%);
+
             color: white;
             margin-top: 12px;
             cursor: pointer;
-             box-shadow: 0 0 10px #84cc16, 
-                        0 0 25px rgba(34, 197, 94, 0.5);
-                        font-weight: bold;
+            box-shadow:
+                0 0 15px rgba(124, 224, 77, 0.5),
+                /* External Glow */
+                inset 0 2px 4px rgba(255, 255, 255, 0.5),
+                /* Inner Top Shine */
+                inset 0 -2px 3px rgba(0, 0, 0, 0.2),
+                /* Inner Bottom Depth */
+                0 4px 8px rgba(0, 0, 0, 0.4);
+            /* Soft Drop Shadow */
+
+            font-weight: bold;
         }
 
         .b2-btn {
@@ -247,12 +258,18 @@
             width: 150px;
             border-radius: 12px;
             border: none;
-            background:linear-gradient(90deg, #FF8C00 0%, #FF4500 100%);
+            background: linear-gradient(90deg, #FF8C00 0%, #FF4500 100%);
             color: white;
             margin-top: 12px;
             cursor: pointer;
-             box-shadow: 0 0 15px rgba(255, 69, 0, 0.6), 
-                        0 0 30px rgba(255, 140, 0, 0.4);
+            box-shadow:
+                0 0 15px rgba(255, 140, 0, 0.5),
+                /* External Glow (Orange) */
+                inset 0 2px 4px rgba(255, 255, 255, 0.5),
+                /* Inner Top Shine */
+                inset 0 -2px 3px rgba(0, 0, 0, 0.2),
+                /* Inner Bottom Depth */
+                0 4px 8px rgba(0, 0, 0, 0.4);
             font-weight: bold;
         }
 
@@ -301,7 +318,7 @@
             padding: 25px;
             border-radius: 15px;
             color: #ccd6f6;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.3s;
         }
 
@@ -344,7 +361,7 @@
         .project-media {
             background: #0f172a;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .project-media img,
@@ -419,7 +436,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 14px 18px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: 0.3s;
         }
 
@@ -580,9 +597,20 @@
         }
 
         @keyframes slideArrow {
-            0% { transform: translateX(0); opacity: 1; }
-            50% { transform: translateX(6px); opacity: 0.6; }
-            100% { transform: translateX(0); opacity: 1; }
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(6px);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         /* REVIEWS */
@@ -661,8 +689,13 @@
             border-radius: 50%;
         }
 
-        .prev { left: 5px; }
-        .next { right: 5px; }
+        .prev {
+            left: 5px;
+        }
+
+        .next {
+            right: 5px;
+        }
 
         .review-form {
             max-width: 550px;
@@ -764,7 +797,7 @@
             cursor: pointer;
             overflow: hidden;
             outline: none;
-            box-shadow: inset 0 0 0 1px rgba(96,165,250,0.25), 0 8px 20px -5px rgba(0,0,0,0.6);
+            box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.25), 0 8px 20px -5px rgba(0, 0, 0, 0.6);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -775,7 +808,7 @@
             left: -150%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0) 20%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0) 80%, transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.79) 50%, rgba(255, 255, 255, 0) 80%, transparent);
             transform: skewX(-25deg);
             animation: premium-shine 4s infinite ease-in-out;
         }
@@ -787,21 +820,29 @@
             left: 0;
             right: 0;
             height: 1.5px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
             opacity: 0.3;
             z-index: 2;
         }
 
         @keyframes premium-shine {
-            0% { left: -150%; }
-            25% { left: 150%; }
-            100% { left: 150%; }
+            0% {
+                left: -150%;
+            }
+
+            25% {
+                left: 150%;
+            }
+
+            100% {
+                left: 150%;
+            }
         }
 
         .btn-premium:hover {
             transform: translateY(-2px);
             background-color: #0e2240;
-            box-shadow: inset 0 0 0 1px rgba(96,165,250,0.6), 0 12px 25px -5px rgba(37,99,235,0.4);
+            box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.6), 0 12px 25px -5px rgba(37, 99, 235, 0.4);
         }
 
         .btn-premium:hover::before {
@@ -831,8 +872,18 @@
         }
 
         @keyframes arrow-float {
-            0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.5; }
-            50% { transform: rotate(45deg) translate(5px,5px); opacity: 1; filter: drop-shadow(0 0 20px white); }
+
+            0%,
+            100% {
+                transform: rotate(45deg) translate(0, 0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: rotate(45deg) translate(5px, 5px);
+                opacity: 1;
+                filter: drop-shadow(0 0 20px white);
+            }
         }
 
         /* WHATSAPP WIDGET */
@@ -852,7 +903,7 @@
             padding: 12px 16px;
             border-radius: 18px;
             max-width: 240px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
             transform: translateY(120px);
             opacity: 0;
             transition: all 0.5s ease;
@@ -914,14 +965,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             animation: pop 0.3s ease;
         }
 
         @keyframes pop {
-            0% { transform: scale(0); }
-            70% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0);
+            }
+
+            70% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* LOADER */
@@ -954,7 +1013,7 @@
             object-fit: cover;
             transform: scale(0.6);
             opacity: 0;
-            transition: all 1s cubic-bezier(.22,1,.36,1);
+            transition: all 1s cubic-bezier(.22, 1, .36, 1);
         }
 
         .text-loader {
@@ -963,7 +1022,7 @@
             color: #4fc3f7;
             white-space: nowrap;
             transform: translateX(-100%);
-            transition: transform 1.4s cubic-bezier(.22,1,.36,1);
+            transition: transform 1.4s cubic-bezier(.22, 1, .36, 1);
         }
 
         .text-box {
@@ -989,13 +1048,31 @@
 
         /* MOBILE */
         @media (max-width: 768px) {
-            .tags { display: none; }
-            .menu-btn { display: block; }
+            .tags {
+                display: none;
+            }
 
-            .pg1-heading { text-align: center; }
-            .pg1-para { text-align: center; }
-            .pg1-btn { display: flex; justify-content: center; margin-top: 25px; }
-            .logo { font-size: 18px; }
+            .menu-btn {
+                display: block;
+            }
+
+            .pg1-heading {
+                text-align: center;
+            }
+
+            .pg1-para {
+                text-align: center;
+            }
+
+            .pg1-btn {
+                display: flex;
+                justify-content: center;
+                margin-top: 25px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
 
             .container2 {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1024,9 +1101,18 @@
                 grid-template-columns: 1fr;
             }
 
-            .left { min-height: 120px; padding: 15px; }
-            .left h2 { font-size: 16px; }
-            .left p { font-size: 12px; }
+            .left {
+                min-height: 120px;
+                padding: 15px;
+            }
+
+            .left h2 {
+                font-size: 16px;
+            }
+
+            .left p {
+                font-size: 12px;
+            }
         }
 
         html {
@@ -1051,10 +1137,14 @@
 
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
-        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-briefcase"></i> Services</a>
-        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-info-circle"></i> About Us</a>
-        <a href="#owner" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;"><i
+                class="fa-solid fa-house"></i> Home</a>
+        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;"><i
+                class="fa-solid fa-briefcase"></i> Services</a>
+        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;"><i
+                class="fa-solid fa-info-circle"></i> About Us</a>
+        <a href="#owner" onclick="document.getElementById('menu-toggle').checked=false;"><i
+                class="fa-solid fa-envelope"></i> Contact</a>
     </div>
 
     <!-- PAGE 1: HERO -->
@@ -1100,7 +1190,8 @@
                     Explore Now
                     <span class="arrow">
                         <svg viewBox="0 0 640 640" width="16" height="16">
-                            <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                            <path
+                                d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
                         </svg>
                     </span>
                 </div>
@@ -1113,11 +1204,15 @@
                 <div class="b-img"><img src="solar1.jpg" alt="Solar street light" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Solar Street Light</h2>
-                    <p class="b-para">Smart, eco-friendly lighting powered by the sun — zero electricity cost, high performance, and built for long-term reliability.</p>
+                    <p class="b-para">Smart, eco-friendly lighting powered by the sun — zero electricity cost, high
+                        performance, and built for long-term reliability.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1125,23 +1220,32 @@
                 <div class="b-img"><img src="solar home.webp" alt="Home solar system" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Home Solar System</h2>
-                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce electricity costs and support a cleaner, sustainable future.</p>
+                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce
+                        electricity costs and support a cleaner, sustainable future.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="solar street traffic.webp" alt="Smart solar traffic signals" loading="lazy"></div>
+                <div class="b-img"><img src="solar street traffic.webp" alt="Smart solar traffic signals"
+                        loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Smart Solar Traffic Signals</h2>
-                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic management.</p>
+                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic
+                        management.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1149,11 +1253,15 @@
                 <div class="b-img"><img src="man.png" alt="Technician service" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Get a Technician for Your Problem</h2>
-                    <p class="b-para">Expert technical support for fast, reliable, and efficient solutions tailored to your needs.</p>
+                    <p class="b-para">Expert technical support for fast, reliable, and efficient solutions tailored to
+                        your needs.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1161,11 +1269,15 @@
                 <div class="b-img"><img src="corn.webp" alt="Corn export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Corn / Maize</h2>
-                    <p class="b-para">High-quality corn for global markets, ensuring freshness, consistency, and reliable supply. Our export services meet international standards.</p>
+                    <p class="b-para">High-quality corn for global markets, ensuring freshness, consistency, and
+                        reliable supply. Our export services meet international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1173,11 +1285,15 @@
                 <div class="b-img"><img src="sugar.webp" alt="Sugar export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Sugar</h2>
-                    <p class="b-para">High-quality sugar for global markets, ensuring purity, consistency, and timely delivery meeting international standards.</p>
+                    <p class="b-para">High-quality sugar for global markets, ensuring purity, consistency, and timely
+                        delivery meeting international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1185,11 +1301,15 @@
                 <div class="b-img"><img src="rice.webp" alt="Rice export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Rice</h2>
-                    <p class="b-para">Premium quality rice with excellent taste and nutritional value. Carefully sourced and processed for global distribution.</p>
+                    <p class="b-para">Premium quality rice with excellent taste and nutritional value. Carefully sourced
+                        and processed for global distribution.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1197,11 +1317,15 @@
                 <div class="b-img"><img src="wheat.webp" alt="Wheat export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Wheat</h2>
-                    <p class="b-para">Superior quality grains suitable for various food applications. Dependable supply for international markets.</p>
+                    <p class="b-para">Superior quality grains suitable for various food applications. Dependable supply
+                        for international markets.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1209,11 +1333,15 @@
                 <div class="b-img"><img src="jawar.jpg" alt="Jawar export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Jawar</h2>
-                    <p class="b-para">Premium quality jowar (sorghum) known for its nutritional value and purity. Carefully sourced and processed to international standards.</p>
+                    <p class="b-para">Premium quality jowar (sorghum) known for its nutritional value and purity.
+                        Carefully sourced and processed to international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1221,11 +1349,15 @@
                 <div class="b-img"><img src="jerra.webp" alt="Jeera export" loading="lazy"></div>
                 <div class="b-heading">
                     <h2>Jeera</h2>
-                    <p class="b-para">Premium quality jeera (cumin seeds) known for rich aroma, strong flavor, and high nutritional value. Hygienically processed to meet international standards.</p>
+                    <p class="b-para">Premium quality jeera (cumin seeds) known for rich aroma, strong flavor, and high
+                        nutritional value. Hygienically processed to meet international standards.</p>
                 </div>
                 <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
-                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1242,52 +1374,63 @@
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-building"></i>
                 <h2>Who We Are</h2>
-                <p>Tuljai Exim & Services is a modern and growing company focused on exports, solar energy, and electrical solutions. We deliver high-quality, reliable, and innovative services that create long-term value for our clients.</p>
+                <p>Tuljai Exim & Services is a modern and growing company focused on exports, solar energy, and
+                    electrical solutions. We deliver high-quality, reliable, and innovative services that create
+                    long-term value for our clients.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-eye"></i>
                 <h2>Our Vision</h2>
-                <p>To become a trusted global provider of export and renewable energy solutions, contributing to a sustainable and eco-friendly future.</p>
+                <p>To become a trusted global provider of export and renewable energy solutions, contributing to a
+                    sustainable and eco-friendly future.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-bullseye"></i>
                 <h2>Our Mission</h2>
-                <p>We are committed to delivering efficient, affordable, and high-quality solutions while maintaining customer satisfaction and long-term relationships.</p>
+                <p>We are committed to delivering efficient, affordable, and high-quality solutions while maintaining
+                    customer satisfaction and long-term relationships.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-solar-panel"></i>
                 <h2>Our Services</h2>
-                <p>We provide solar street lights, home solar systems, smart traffic signals, and expert technical services for electrical and solar needs.</p>
+                <p>We provide solar street lights, home solar systems, smart traffic signals, and expert technical
+                    services for electrical and solar needs.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-wheat-awn"></i>
                 <h2>Export Quality</h2>
-                <p>Our agricultural products like rice, wheat, corn, sugar, and spices are carefully sourced and processed to meet international quality standards.</p>
+                <p>Our agricultural products like rice, wheat, corn, sugar, and spices are carefully sourced and
+                    processed to meet international quality standards.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-thumbs-up"></i>
                 <h2>Why Choose Us</h2>
-                <p>✔ High-quality products<br>✔ Trusted & transparent service<br>✔ Timely delivery<br>✔ Customer-first approach</p>
+                <p>✔ High-quality products<br>✔ Trusted & transparent service<br>✔ Timely delivery<br>✔ Customer-first
+                    approach</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-gears"></i>
                 <h2>Our Strength</h2>
-                <p>Strong technical knowledge, reliable supply chain, and a dedicated team help us deliver consistent and dependable solutions.</p>
+                <p>Strong technical knowledge, reliable supply chain, and a dedicated team help us deliver consistent
+                    and dependable solutions.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-handshake"></i>
                 <h2>Customer Commitment</h2>
-                <p>We focus on understanding client needs and providing customized solutions that ensure satisfaction and long-term partnerships.</p>
+                <p>We focus on understanding client needs and providing customized solutions that ensure satisfaction
+                    and long-term partnerships.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-rocket"></i>
                 <h2>Future Goals</h2>
-                <p>Expanding globally in exports and renewable energy while adopting the latest technologies for better efficiency and sustainability.</p>
+                <p>Expanding globally in exports and renewable energy while adopting the latest technologies for better
+                    efficiency and sustainability.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-star"></i>
                 <h2>Our Values</h2>
-                <p>We believe in honesty, quality, and innovation. Our core values drive us to deliver reliable services, maintain transparency, and build strong trust with our customers and partners.</p>
+                <p>We believe in honesty, quality, and innovation. Our core values drive us to deliver reliable
+                    services, maintain transparency, and build strong trust with our customers and partners.</p>
             </div>
         </div>
 
@@ -1298,7 +1441,8 @@
                 <p class="p3-para">
                     We are currently executing solar power plant projects in Khavda, Gujarat, and Harba, Rajasthan,
                     with a strong focus on precision, efficiency, and long-term reliability. The ongoing work includes
-                    panel mounting, electrical wiring, and system testing — all carried out in accordance with industry standards.
+                    panel mounting, electrical wiring, and system testing — all carried out in accordance with industry
+                    standards.
                 </p>
             </div>
             <div class="project-container">
@@ -1341,7 +1485,8 @@
                     </div>
                     <div class="contact-box">
                         <span><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</span>
-                        <a href="https://wa.me/9356824656" target="_blank" rel="noopener noreferrer"><button>Chat</button></a>
+                        <a href="https://wa.me/9356824656" target="_blank"
+                            rel="noopener noreferrer"><button>Chat</button></a>
                     </div>
                     <div class="contact-box">
                         <span><i class="fa-solid fa-envelope"></i> Email Us</span>
@@ -1368,113 +1513,113 @@
         </div>
 
         <!-- REVIEWS -->
-    
-          
 
-    <!-- SOCIAL ICONS -->
-    <div class="icons">
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-    </div>
 
-    <div class="end">
-        <p><b>Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</b></p>
-    </div>
 
-    <!-- LOADER -->
-    <div id="loader">
-        <div class="wrapper" id="wrapper">
-            <img src="shri logo.png" class="logo-loader" alt="logo">
-            <div class="text-box">
-                <div class="text-loader">Tuljai Exim & Services</div>
+        <!-- SOCIAL ICONS -->
+        <div class="icons">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+
+        <div class="end">
+            <p><b>Tuljai Exim & Services. All Rights Reserved. | Designed & Developed in 2025</b></p>
+        </div>
+
+        <!-- LOADER -->
+        <div id="loader">
+            <div class="wrapper" id="wrapper">
+                <img src="shri logo.png" class="logo-loader" alt="logo">
+                <div class="text-box">
+                    <div class="text-loader">Tuljai Exim & Services</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- WHATSAPP WIDGET -->
-    <div class="whatsapp-container">
-        <div class="chat-box" id="chatBox">
-            <div class="chat-header">
-                <div class="online"></div>
-                Confused?
+        <!-- WHATSAPP WIDGET -->
+        <div class="whatsapp-container">
+            <div class="chat-box" id="chatBox">
+                <div class="chat-header">
+                    <div class="online"></div>
+                    Confused?
+                </div>
+                <div class="chat-text" id="chatText"></div>
             </div>
-            <div class="chat-text" id="chatText"></div>
+            <div class="whatsapp-btn" onclick="openWhatsApp()" role="button" aria-label="Chat on WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                <div class="badge" id="badge">1</div>
+            </div>
         </div>
-        <div class="whatsapp-btn" onclick="openWhatsApp()" role="button" aria-label="Chat on WhatsApp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            <div class="badge" id="badge">1</div>
-        </div>
-    </div>
 
-    <!-- FIREBASE REVIEWS -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy }
-        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        <!-- FIREBASE REVIEWS -->
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+            import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy }
+                from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-        // ADD YOUR FIREBASE CONFIG HERE:
-        // const firebaseConfig = { apiKey: "...", authDomain: "...", projectId: "..." };
-        // const app = initializeApp(firebaseConfig);
-        // const db = getFirestore(app);
+            // ADD YOUR FIREBASE CONFIG HERE:
+            // const firebaseConfig = { apiKey: "...", authDomain: "...", projectId: "..." };
+            // const app = initializeApp(firebaseConfig);
+            // const db = getFirestore(app);
 
-        let reviews = [];
-        let currentIndex = 0;
-        let selectedRating = 0;
-        let selectedTags = [];
+            let reviews = [];
+            let currentIndex = 0;
+            let selectedRating = 0;
+            let selectedTags = [];
 
-        const userId = localStorage.getItem("tuljai_uid") || Math.random().toString(36).substring(7);
-        localStorage.setItem("tuljai_uid", userId);
+            const userId = localStorage.getItem("tuljai_uid") || Math.random().toString(36).substring(7);
+            localStorage.setItem("tuljai_uid", userId);
 
-        const stars = document.querySelectorAll("#starInput span");
-        stars.forEach((star, index) => {
-            star.addEventListener("mouseover", () => stars.forEach((s, i) => s.classList.toggle("hovered", i <= index)));
-            star.addEventListener("mouseout", () => stars.forEach(s => s.classList.remove("hovered")));
-            star.addEventListener("click", () => {
-                selectedRating = index + 1;
-                stars.forEach((s, i) => s.classList.toggle("active", i < selectedRating));
+            const stars = document.querySelectorAll("#starInput span");
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseover", () => stars.forEach((s, i) => s.classList.toggle("hovered", i <= index)));
+                star.addEventListener("mouseout", () => stars.forEach(s => s.classList.remove("hovered")));
+                star.addEventListener("click", () => {
+                    selectedRating = index + 1;
+                    stars.forEach((s, i) => s.classList.toggle("active", i < selectedRating));
+                });
             });
-        });
 
-        const suggestions = [
-            "☀️ Solar Expertise", "🛠️ Professional Install", "⚡ High Efficiency",
-            "💰 Great ROI", "🌱 Eco-Friendly", "🔧 Reliable Support",
-            "📝 Easy Subsidy", "🤝 Trusted Partner", "📞 Quick Response", "✨ Neat Wiring"
-        ];
+            const suggestions = [
+                "☀️ Solar Expertise", "🛠️ Professional Install", "⚡ High Efficiency",
+                "💰 Great ROI", "🌱 Eco-Friendly", "🔧 Reliable Support",
+                "📝 Easy Subsidy", "🤝 Trusted Partner", "📞 Quick Response", "✨ Neat Wiring"
+            ];
 
-        suggestions.forEach(text => {
-            const tag = document.createElement("div");
-            tag.className = "tag-option";
-            tag.innerText = text;
-            tag.onclick = () => {
-                if (selectedTags.includes(text)) {
-                    selectedTags = selectedTags.filter(t => t !== text);
-                    tag.classList.remove("active");
-                } else {
-                    selectedTags.push(text);
-                    tag.classList.add("active");
-                }
-            };
-            document.getElementById("tagsContainer").appendChild(tag);
-        });
+            suggestions.forEach(text => {
+                const tag = document.createElement("div");
+                tag.className = "tag-option";
+                tag.innerText = text;
+                tag.onclick = () => {
+                    if (selectedTags.includes(text)) {
+                        selectedTags = selectedTags.filter(t => t !== text);
+                        tag.classList.remove("active");
+                    } else {
+                        selectedTags.push(text);
+                        tag.classList.add("active");
+                    }
+                };
+                document.getElementById("tagsContainer").appendChild(tag);
+            });
 
-        // Uncomment when Firebase config is added:
-        // window.submitReview = async function() { ... }
-        // window.deleteReview = async function(id) { ... }
-        // async function loadReviews() { ... }
+            // Uncomment when Firebase config is added:
+            // window.submitReview = async function() { ... }
+            // window.deleteReview = async function(id) { ... }
+            // async function loadReviews() { ... }
 
-        function renderSlides() {
-            const slider = document.getElementById("slider");
-            slider.innerHTML = reviews.length
-                ? ""
-                : `<div class='slide'><div class='review-card'>No reviews yet. Be the first!</div></div>`;
-            reviews.forEach(r => {
-                const tagsHTML = (r.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
-                const deleteBtn = r.userId === userId
-                    ? `<button onclick="deleteReview('${r.id}')" style="margin-top:10px;background:none;color:#ff4d4d;border:1px solid #ff4d4d;cursor:pointer;border-radius:6px;padding:4px 10px;">Delete</button>`
-                    : "";
-                slider.innerHTML += `
+            function renderSlides() {
+                const slider = document.getElementById("slider");
+                slider.innerHTML = reviews.length
+                    ? ""
+                    : `<div class='slide'><div class='review-card'>No reviews yet. Be the first!</div></div>`;
+                reviews.forEach(r => {
+                    const tagsHTML = (r.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
+                    const deleteBtn = r.userId === userId
+                        ? `<button onclick="deleteReview('${r.id}')" style="margin-top:10px;background:none;color:#ff4d4d;border:1px solid #ff4d4d;cursor:pointer;border-radius:6px;padding:4px 10px;">Delete</button>`
+                        : "";
+                    slider.innerHTML += `
                     <div class="slide">
                         <div class="review-card">
                             <strong style="color:var(--primary)">${r.name}</strong>
@@ -1484,104 +1629,105 @@
                             ${deleteBtn}
                         </div>
                     </div>`;
-            });
-            currentIndex = 0;
-            moveSlide();
-        }
-
-        function updateAverage() {
-            if (!reviews.length) return;
-            const avg = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
-            document.getElementById("avgRating").innerText = avg;
-            document.getElementById("avgStars").innerText = "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
-        }
-
-        function moveSlide() {
-            document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        window.nextSlide = () => {
-            if (reviews.length > 1) { currentIndex = (currentIndex + 1) % reviews.length; moveSlide(); }
-        };
-        window.prevSlide = () => {
-            if (reviews.length > 1) { currentIndex = (currentIndex - 1 + reviews.length) % reviews.length; moveSlide(); }
-        };
-
-        document.getElementById("submitBtn").onclick = () => window.submitReview && window.submitReview();
-        document.getElementById("nextBtn").onclick = () => window.nextSlide();
-        document.getElementById("prevBtn").onclick = () => window.prevSlide();
-        setInterval(window.nextSlide, 5000);
-
-        renderSlides();
-        updateAverage();
-    </script>
-
-    <!-- LOADER SCRIPT -->
-    <script>
-        window.addEventListener("load", function () {
-            const wrapper = document.getElementById("wrapper");
-            const loader = document.getElementById("loader");
-            setTimeout(() => wrapper.classList.add("show-loader"), 200);
-            setTimeout(() => wrapper.classList.add("move-loader"), 1200);
-            setTimeout(() => {
-                loader.style.opacity = "0";
-                setTimeout(() => loader.style.display = "none", 800);
-            }, 3200);
-        });
-    </script>
-
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1400, once: false, offset: 120, delay: 100 });
-    </script>
-
-    <!-- WHATSAPP CHAT SCRIPT -->
-    <script>
-        function openWhatsApp() {
-            const phone = "918605408258";
-            const message = "Hi, I need help!";
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
-        }
-
-        window.addEventListener("load", () => {
-            const chatBox = document.getElementById("chatBox");
-            const badge = document.getElementById("badge");
-            const chatText = document.getElementById("chatText");
-            const text = "Need help? We're online 👋";
-
-            function type(i) {
-                if (i < text.length) {
-                    chatText.innerHTML += text.charAt(i);
-                    setTimeout(() => type(i + 1), 50);
-                }
+                });
+                currentIndex = 0;
+                moveSlide();
             }
 
-            function showChat() {
-                chatText.innerHTML = "";
-                badge.style.display = "none";
-                chatBox.style.display = "block";
-                setTimeout(() => chatBox.classList.add("show"), 100);
-                type(0);
-                setTimeout(hideChat, 10000);
+            function updateAverage() {
+                if (!reviews.length) return;
+                const avg = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
+                document.getElementById("avgRating").innerText = avg;
+                document.getElementById("avgStars").innerText = "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
             }
 
-            function hideChat() {
-                chatBox.classList.remove("show");
+            function moveSlide() {
+                document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            window.nextSlide = () => {
+                if (reviews.length > 1) { currentIndex = (currentIndex + 1) % reviews.length; moveSlide(); }
+            };
+            window.prevSlide = () => {
+                if (reviews.length > 1) { currentIndex = (currentIndex - 1 + reviews.length) % reviews.length; moveSlide(); }
+            };
+
+            document.getElementById("submitBtn").onclick = () => window.submitReview && window.submitReview();
+            document.getElementById("nextBtn").onclick = () => window.nextSlide();
+            document.getElementById("prevBtn").onclick = () => window.prevSlide();
+            setInterval(window.nextSlide, 5000);
+
+            renderSlides();
+            updateAverage();
+        </script>
+
+        <!-- LOADER SCRIPT -->
+        <script>
+            window.addEventListener("load", function () {
+                const wrapper = document.getElementById("wrapper");
+                const loader = document.getElementById("loader");
+                setTimeout(() => wrapper.classList.add("show-loader"), 200);
+                setTimeout(() => wrapper.classList.add("move-loader"), 1200);
                 setTimeout(() => {
-                    chatBox.style.display = "none";
-                    badge.style.display = "flex";
-                }, 500);
+                    loader.style.opacity = "0";
+                    setTimeout(() => loader.style.display = "none", 800);
+                }, 3200);
+            });
+        </script>
+
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({ duration: 1400, once: true, offset: 120, delay: 100 });
+        </script>
+
+        <!-- WHATSAPP CHAT SCRIPT -->
+        <script>
+            function openWhatsApp() {
+                const phone = "918605408258";
+                const message = "Hi, I need help!";
+                window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
             }
 
-            setTimeout(() => {
-                showChat();
-                setInterval(() => {
-                    if (chatBox.style.display === "none") showChat();
-                }, 20000);
-            }, 8000);
-        });
-    </script>
+            window.addEventListener("load", () => {
+                const chatBox = document.getElementById("chatBox");
+                const badge = document.getElementById("badge");
+                const chatText = document.getElementById("chatText");
+                const text = "Need help? We're online 👋";
+
+                function type(i) {
+                    if (i < text.length) {
+                        chatText.innerHTML += text.charAt(i);
+                        setTimeout(() => type(i + 1), 50);
+                    }
+                }
+
+                function showChat() {
+                    chatText.innerHTML = "";
+                    badge.style.display = "none";
+                    chatBox.style.display = "block";
+                    setTimeout(() => chatBox.classList.add("show"), 100);
+                    type(0);
+                    setTimeout(hideChat, 10000);
+                }
+
+                function hideChat() {
+                    chatBox.classList.remove("show");
+                    setTimeout(() => {
+                        chatBox.style.display = "none";
+                        badge.style.display = "flex";
+                    }, 500);
+                }
+
+                setTimeout(() => {
+                    showChat();
+                    setInterval(() => {
+                        if (chatBox.style.display === "none") showChat();
+                    }, 20000);
+                }, 8000);
+            });
+        </script>
 
 </body>
+
 </html>
