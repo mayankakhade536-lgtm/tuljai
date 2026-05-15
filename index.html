@@ -1118,6 +1118,20 @@
         html {
             scroll-behavior: smooth;
         }
+
+         .carousel-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+    .carousel-track { display: flex; transition: transform 0.7s cubic-bezier(0.25,1,0.5,1); }
+    .carousel-slide { flex: 0 0 100%; position: relative; }
+    .carousel-slide img, .carousel-slide video { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+    .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 20px; background: linear-gradient(to top, rgba(5,15,35,0.85), transparent); color: #ccd6f6; font-size: 14px; }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; padding: 14px 0; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: 0.3s; border: none; }
+    .dot.active { background: #60a5fa; transform: scale(1.3); }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(10,25,47,0.7); border: 1px solid rgba(96,165,250,0.3); color: #60a5fa; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: 0.2s; }
+    .carousel-btn:hover { background: rgba(37,99,235,0.5); }
+    .prev-btn { left: 12px; }
+    .next-btn { right: 12px; }
+    .slide-counter { position: absolute; top: 12px; right: 14px; background: rgba(10,25,47,0.65); color: #ccd6f6; font-size: 12px; padding: 4px 10px; border-radius: 20px; }
     </style>
 </head>
 
@@ -1255,6 +1269,21 @@
                     <h2>Get a Technician for Your Problem</h2>
                     <p class="b-para">Expert technical support for fast, reliable, and efficient solutions tailored to
                         your needs.</p>
+                </div>
+                <div class="b-btn">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
+                            Now</button></a>
+                    <a
+                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button
+                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                </div>
+            </div>
+
+            <div class="box1" data-aos="fade-up">
+                <div class="b-img"><img src="solar cleaning.webp" alt="Technician service" loading="lazy"></div>
+                <div class="b-heading">
+                    <h2>Solar cleaning</h2>
+                    <p class="b-para">Keep Your Solar Panels Clean, Efficient, and Powering Your Future with Reliable Cleaning Solutions.</p>
                 </div>
                 <div class="b-btn">
                     <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
@@ -1435,30 +1464,242 @@
         </div>
 
         <!-- PROJECTS -->
-        <div class="project" id="projects">
-            <h1 class="h9">Our Projects</h1>
-            <div class="project-text">
-                <p class="p3-para">
-                    We are currently executing solar power plant projects in Khavda, Gujarat, and Harba, Rajasthan,
-                    with a strong focus on precision, efficiency, and long-term reliability. The ongoing work includes
-                    panel mounting, electrical wiring, and system testing — all carried out in accordance with industry
-                    standards.
-                </p>
-            </div>
-            <div class="project-container">
-                <div class="project-media" data-aos="zoom-in">
-                    <img src="project1.jpeg" alt="Project 1" loading="lazy">
-                </div>
-                <div class="project-media" data-aos="zoom-in">
-                    <video autoplay muted loop playsinline>
-                        <source src="sol video.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="project-media" data-aos="zoom-in">
-                    <img src="pro img2.jpeg" alt="Project 2" loading="lazy">
-                </div>
-            </div>
+      
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    .proj-section{width:100%;background:#0a192f;font-family:'Rubik',sans-serif}
+    .proj-header{text-align:center;padding:48px 20px 32px}
+    .proj-header span{display:block;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(96,165,250,0.7);margin-bottom:10px;font-weight:400}
+    .proj-header h2{font-size:clamp(28px,5vw,48px);font-weight:700;color:#fff;letter-spacing:-0.5px;line-height:1.1}
+    .proj-header h2 em{font-style:normal;color:#60a5fa}
+    .proj-header p{margin-top:12px;color:rgba(255,255,255,0.35);font-size:14px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+    .fs-carousel{position:relative;width:100%;height:90vh;min-height:320px;;overflow:hidden;background:#000}
+    .fs-track{display:flex;height:100%;will-change:transform;transition:transform 0.95s cubic-bezier(0.77,0,0.18,1)}
+    .fs-slide{flex:0 0 100%;position:relative;height:100%}
+    .fs-slide img,.fs-slide video{width:100%;height:100%;object-fit:cover;display:block}
+
+    .fs-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.3) 40%,rgba(0,0,0,0.05) 100%)}
+
+    .fs-text{position:absolute;bottom:0;left:0;right:0;padding:clamp(24px,5vw,60px) clamp(20px,6vw,70px)}
+    .fs-badge{display:inline-block;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:5px 14px;margin-bottom:14px;backdrop-filter:blur(6px)}
+    .fs-title{font-size:clamp(20px,4.5vw,44px);font-weight:700;line-height:1.15;color:#fff;mix-blend-mode:screen;opacity:0.95;letter-spacing:-0.3px}
+    .fs-sub{font-size:clamp(12px,1.8vw,15px);color:rgba(255,255,255,0.5);margin-top:8px;mix-blend-mode:screen;letter-spacing:0.3px}
+
+    .fs-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);color:#fff;width:clamp(36px,5vw,50px);height:clamp(36px,5vw,50px);cursor:pointer;font-size:clamp(16px,2.5vw,22px);display:flex;align-items:center;justify-content:center;transition:all 0.25s;backdrop-filter:blur(10px);z-index:10}
+    .fs-nav:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.45)}
+    .fs-prev{left:clamp(10px,3vw,28px)}
+    .fs-next{right:clamp(10px,3vw,28px)}
+
+    .fs-bottom{position:absolute;bottom:clamp(16px,3vw,28px);right:clamp(20px,5vw,60px);display:flex;align-items:center;gap:16px;z-index:10}
+    .fs-counter{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);font-weight:500;white-space:nowrap}
+    .fs-dots{display:flex;gap:6px;align-items:center}
+    .fs-dot{width:20px;height:2px;background:rgba(255,255,255,0.22);cursor:pointer;border:none;transition:all 0.35s}
+    .fs-dot.active{background:#fff;width:36px}
+
+    .fs-progress{position:absolute;bottom:0;left:0;height:2px;background:rgba(255,255,255,0.6);width:0%}
+
+    .proj-footer{display:flex;justify-content:center;padding:24px 20px 40px;gap:8px;flex-wrap:wrap}
+    .slide-thumb{width:clamp(48px,8vw,72px);height:4px;background:rgba(255,255,255,0.08);cursor:pointer;border:none;transition:all 0.3s}
+    .slide-thumb.active{background:#60a5fa}
+    /* 1. Add extra padding to the bottom of the text so it doesn't hit the dots */
+.fs-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Increased bottom padding from 24px to 80px on mobile via clamp */
+  padding: clamp(24px, 5vw, 60px) clamp(20px, 6vw, 70px) clamp(70px, 8vw, 90px); 
+  z-index: 5;
+}
+
+/* 2. Fix the navigation bar positioning */
+.fs-bottom {
+  position: absolute;
+  bottom: clamp(20px, 4vw, 40px); /* Fixed distance from the very bottom */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  /* This pushes the dots to the left and counter to the right */
+  justify-content: space-between; 
+  padding: 0 clamp(20px, 6vw, 70px); /* Matches text alignment exactly */
+  gap: 16px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Ensure dots/counter are clickable but the container isn't blocking the image */
+.fs-bottom > * {
+  pointer-events: auto;
+}
+
+/* 3. Swap the order so Dots are on the Left and Counter is on the Right (matches your screenshot) */
+.fs-counter {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  order: 2; /* Moves counter to the right */
+}
+
+.fs-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  order: 1; /* Moves dots to the left */
+}
+
+/* Ensure the lines (dots) are clearly visible */
+.fs-dot {
+  width: 25px; 
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  border: none;
+  transition: all 0.35s;
+}
+
+.fs-dot.active {
+  background: #fff;
+  width: 45px;
+}
+  </style>
+
+
+  <div class="proj-section">
+    <div class="proj-header">
+      <span>Tuljai exim & services</span>
+      <h2>Our <em>Projects</em></h2>
+      <p>Solar power plant projects across Khavda, Gujarat and Harba, Rajasthan — built to last.</p>
+    </div>
+
+    <div class="fs-carousel">
+      <div class="fs-track" id="fst">
+
+        <div class="fs-slide">
+          <img src="project1.jpeg" alt="Project 1" onerror="this.style.background='#0f172a';this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Project+1'">
+          <div class="fs-overlay"></div>
+          <div class="fs-text">
+            <div class="fs-badge">Khavda · Gujarat</div>
+            <div class="fs-title">Solar Power Plant</div>
+            <div class="fs-sub">Panel mounting &amp; structural installation</div>
+          </div>
         </div>
+
+        <div class="fs-slide">
+          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+            <source src="sol video.mp4" type="video/mp4">
+          </video>
+          <div class="fs-overlay"></div>
+          <div class="fs-text">
+            <div class="fs-badge">Live · On-Site</div>
+            <div class="fs-title">Installation in Progress</div>
+            <div class="fs-sub">Real-time footage from our solar project</div>
+          </div>
+        </div>
+
+        <div class="fs-slide">
+          <img src="pro img2.jpeg" alt="Project 2" onerror="this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Project+2'">
+          <div class="fs-overlay"></div>
+          <div class="fs-text">
+            <div class="fs-badge">Harba · Rajasthan</div>
+            <div class="fs-title">Electrical Wiring &amp; Testing</div>
+            <div class="fs-sub">Precision work to industry standards</div>
+          </div>
+        </div>
+
+        <div class="fs-slide">
+          <img src="workers.webp" alt="Team" onerror="this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Our+Team'">
+          <div class="fs-overlay"></div>
+          <div class="fs-text">
+            <div class="fs-badge">Our People</div>
+            <div class="fs-title">Dedicated Team On-Site</div>
+            <div class="fs-sub">Expert professionals delivering reliable results</div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="fs-nav fs-prev" id="fsPrev" aria-label="Previous">&#8592;</button>
+      <button class="fs-nav fs-next" id="fsNext" aria-label="Next">&#8594;</button>
+
+      <div class="fs-bottom">
+        <div class="fs-counter" id="fsCtr">01 / 04</div>
+        <div class="fs-dots" id="fsDots"></div>
+      </div>
+      <div class="fs-progress" id="fsBar"></div>
+    </div>
+
+    <div class="proj-footer" id="thumbs"></div>
+  </div>
+
+  <script>
+  (function(){
+    const track=document.getElementById('fst');
+    const slides=track.querySelectorAll('.fs-slide');
+    const dotsWrap=document.getElementById('fsDots');
+    const thumbWrap=document.getElementById('thumbs');
+    const ctr=document.getElementById('fsCtr');
+    const bar=document.getElementById('fsBar');
+    const n=slides.length;
+    let cur=0,raf,dur=5000;
+
+    const labels=['Solar Plant','Site Video','Wiring & Testing','Our Team'];
+
+    slides.forEach((_,i)=>{
+      const d=document.createElement('button');
+      d.className='fs-dot'+(i===0?' active':'');
+      d.onclick=()=>goTo(i);
+      dotsWrap.appendChild(d);
+
+      const t=document.createElement('button');
+      t.className='slide-thumb'+(i===0?' active':'');
+      t.title=labels[i]||('Slide '+(i+1));
+      t.onclick=()=>goTo(i);
+      thumbWrap.appendChild(t);
+    });
+
+    function goTo(idx){
+      cur=(idx+n)%n;
+      track.style.transform=`translateX(-${cur*100}%)`;
+      dotsWrap.querySelectorAll('.fs-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+      thumbWrap.querySelectorAll('.slide-thumb').forEach((t,i)=>t.classList.toggle('active',i===cur));
+      ctr.textContent=String(cur+1).padStart(2,'0')+' / '+String(n).padStart(2,'0');
+      resetBar();
+    }
+
+    function resetBar(){
+      cancelAnimationFrame(raf);
+      bar.style.transition='none';
+      bar.style.width='0%';
+      let start=null;
+      function step(ts){
+        if(!start)start=ts;
+        const p=Math.min((ts-start)/dur*100,100);
+        bar.style.width=p+'%';
+        if(p<100)raf=requestAnimationFrame(step);
+        else goTo(cur+1);
+      }
+      raf=requestAnimationFrame(step);
+    }
+
+    document.getElementById('fsPrev').onclick=()=>goTo(cur-1);
+    document.getElementById('fsNext').onclick=()=>goTo(cur+1);
+
+    let tx=0;
+    const el=document.querySelector('.fs-carousel');
+    el.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+    el.addEventListener('touchend',e=>{
+      const dx=e.changedTouches[0].clientX-tx;
+      if(Math.abs(dx)>40)goTo(cur+(dx<0?1:-1));
+    },{passive:true});
+
+    resetBar();
+  })();
+  </script>
+
+
 
         <a href="#page2">
             <div class="back"><i class="fa-solid fa-arrow-up"></i> Back to top</div>
@@ -1552,6 +1793,8 @@
                 <div class="badge" id="badge">1</div>
             </div>
         </div>
+
+    
 
         <!-- FIREBASE REVIEWS -->
         <script type="module">
