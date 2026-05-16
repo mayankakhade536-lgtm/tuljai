@@ -179,103 +179,208 @@
             font-size: 15px;
         }
 
+        /* =============================================
+           REDESIGNED PRODUCT CARDS - MODERN & TECHNICAL
+           ============================================= */
         .container2 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 24px;
             padding: 30px;
         }
 
         .box1 {
-            background: #0f172a;
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            background: #060f1f;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(96, 165, 250, 0.12);
             transition: transform 0.4s cubic-bezier(.22, 1, .36, 1),
                 box-shadow 0.4s ease,
-                background 0.3s ease;
+                border-color 0.3s ease;
             color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Animated top-edge accent line */
+        .box1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #60a5fa, #2563eb, transparent);
+            transition: left 0.5s ease;
+            z-index: 2;
+        }
+
+        .box1:hover::before {
+            left: 100%;
+        }
+
+        /* Corner bracket decorations */
+        .box1::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            border-top: 2px solid rgba(96, 165, 250, 0.5);
+            border-left: 2px solid rgba(96, 165, 250, 0.5);
+            border-radius: 2px 0 0 0;
+            z-index: 2;
+            transition: opacity 0.3s;
         }
 
         .box1:hover {
-            transform: translateY(-10px) scale(1.03) !important;
-            background: linear-gradient(135deg, #1e3b8a, #0f172a);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(28, 52, 81, 0.3);
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow:
+                0 0 0 1px rgba(96, 165, 250, 0.25),
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(37, 99, 235, 0.12);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        /* Card image section */
+        .b-img {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: #0a1628;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.08);
+        }
+
+        .b-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            z-index: 1;
         }
 
         .b-img img {
             width: 100%;
-            max-width: 200px;
-            height: auto;
+            height: 100%;
             object-fit: contain;
+            object-position: center;
             display: block;
-            margin: auto;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s cubic-bezier(.22, 1, .36, 1);
+            filter: brightness(0.92) saturate(0.95);
         }
 
         .box1:hover .b-img img {
             transform: scale(1.08);
+            filter: brightness(1) saturate(1.1);
+        }
+
+        /* Category tag inside image */
+        .b-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 3;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #60a5fa;
+            background: rgba(6, 15, 31, 0.85);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+        }
+
+        /* Card body */
+        .b-body {
+            padding: 18px 18px 0;
+            flex: 1;
+        }
+
+        .b-heading h2 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e2eaf8;
+            margin: 0 0 8px;
+            letter-spacing: 0.2px;
+            line-height: 1.3;
+        }
+
+        /* Thin divider below title */
+        .b-divider {
+            width: 32px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, transparent);
+            margin-bottom: 10px;
+            border-radius: 2px;
         }
 
         .b-para {
-            font-size: 14px;
-            width: auto;
+            font-size: 12.5px;
+            color: #6b82a8;
+            line-height: 1.6;
+            margin: 0;
         }
 
-        .b-btn {
+        /* Card footer with buttons */
+        .b-footer {
+            padding: 14px 18px 18px;
             display: flex;
-            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .b1-btn, .b2-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 6px;
+            padding: 9px 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
         }
 
         .b1-btn {
-            padding: 8px 10px;
-            width: 150px;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(to bottom, #7ce04d 0%, #24a141 100%);
+            background: rgba(34, 197, 94, 0.1);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+        }
 
-            color: white;
-            margin-top: 12px;
-            cursor: pointer;
-            box-shadow:
-                0 0 15px rgba(124, 224, 77, 0.5),
-                /* External Glow */
-                inset 0 2px 4px rgba(255, 255, 255, 0.5),
-                /* Inner Top Shine */
-                inset 0 -2px 3px rgba(0, 0, 0, 0.2),
-                /* Inner Bottom Depth */
-                0 4px 8px rgba(0, 0, 0, 0.4);
-            /* Soft Drop Shadow */
-
-            font-weight: bold;
+        .b1-btn:hover {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: rgba(34, 197, 94, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.15);
         }
 
         .b2-btn {
-            padding: 8px 10px;
-            width: 150px;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(90deg, #FF8C00 0%, #FF4500 100%);
-            color: white;
-            margin-top: 12px;
-            cursor: pointer;
-            box-shadow:
-                0 0 15px rgba(255, 140, 0, 0.5),
-                /* External Glow (Orange) */
-                inset 0 2px 4px rgba(255, 255, 255, 0.5),
-                /* Inner Top Shine */
-                inset 0 -2px 3px rgba(0, 0, 0, 0.2),
-                /* Inner Bottom Depth */
-                0 4px 8px rgba(0, 0, 0, 0.4);
-            font-weight: bold;
+            background: rgba(251, 146, 60, 0.1);
+            color: #fb923c;
+            border: 1px solid rgba(251, 146, 60, 0.25);
         }
 
-        .fa-solid {
-            margin-right: 10px;
+        .b2-btn:hover {
+            background: rgba(251, 146, 60, 0.2);
+            border-color: rgba(251, 146, 60, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(251, 146, 60, 0.15);
         }
+
+        .b1-btn i, .b2-btn i {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* END REDESIGNED CARDS */
 
         /* PAGE 3 */
         .page3 {
@@ -597,20 +702,9 @@
         }
 
         @keyframes slideArrow {
-            0% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateX(6px);
-                opacity: 0.6;
-            }
-
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            0% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(6px); opacity: 0.6; }
+            100% { transform: translateX(0); opacity: 1; }
         }
 
         /* REVIEWS */
@@ -689,13 +783,8 @@
             border-radius: 50%;
         }
 
-        .prev {
-            left: 5px;
-        }
-
-        .next {
-            right: 5px;
-        }
+        .prev { left: 5px; }
+        .next { right: 5px; }
 
         .review-form {
             max-width: 550px;
@@ -826,17 +915,9 @@
         }
 
         @keyframes premium-shine {
-            0% {
-                left: -150%;
-            }
-
-            25% {
-                left: 150%;
-            }
-
-            100% {
-                left: 150%;
-            }
+            0% { left: -150%; }
+            25% { left: 150%; }
+            100% { left: 150%; }
         }
 
         .btn-premium:hover {
@@ -872,21 +953,13 @@
         }
 
         @keyframes arrow-float {
-
-            0%,
-            100% {
-                transform: rotate(45deg) translate(0, 0);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: rotate(45deg) translate(5px, 5px);
-                opacity: 1;
-                filter: drop-shadow(0 0 20px white);
-            }
+            0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.5; }
+            50% { transform: rotate(45deg) translate(5px, 5px); opacity: 1; filter: drop-shadow(0 0 20px white); }
         }
 
-        /* WHATSAPP WIDGET */
+        /* =============================================
+           DRAGGABLE WHATSAPP WIDGET
+           ============================================= */
         .whatsapp-container {
             position: fixed;
             bottom: 25px;
@@ -895,6 +968,13 @@
             align-items: flex-end;
             gap: 12px;
             z-index: 9999;
+            /* Make the whole container draggable */
+            touch-action: none;
+            user-select: none;
+        }
+
+        .whatsapp-container.dragging {
+            transition: none !important;
         }
 
         .chat-box {
@@ -942,12 +1022,40 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
+            cursor: grab;
             position: relative;
+            flex-shrink: 0;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+
+        .whatsapp-btn:active {
+            cursor: grabbing;
         }
 
         .whatsapp-btn img {
             width: 30px;
+            pointer-events: none;
+        }
+
+        /* Drag indicator tooltip */
+        .drag-hint {
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9px;
+            color: rgba(255,255,255,0.7);
+            background: rgba(0,0,0,0.5);
+            padding: 2px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .whatsapp-btn:hover .drag-hint {
+            opacity: 1;
         }
 
         .badge {
@@ -970,17 +1078,9 @@
         }
 
         @keyframes pop {
-            0% {
-                transform: scale(0);
-            }
-
-            70% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(0); }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
 
         /* LOADER */
@@ -1048,90 +1148,59 @@
 
         /* MOBILE */
         @media (max-width: 768px) {
-            .tags {
-                display: none;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .pg1-heading {
-                text-align: center;
-            }
-
-            .pg1-para {
-                text-align: center;
-            }
-
-            .pg1-btn {
-                display: flex;
-                justify-content: center;
-                margin-top: 25px;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            .container2 {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .owner-card {
-                flex-direction: column;
-                gap: 25px;
-            }
-
-            .contact-box {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .contact-box button {
-                width: 100%;
-            }
-
-            .project-container {
-                grid-template-columns: 1fr;
-            }
-
-            .left {
-                min-height: 120px;
-                padding: 15px;
-            }
-
-            .left h2 {
-                font-size: 16px;
-            }
-
-            .left p {
-                font-size: 12px;
-            }
+            .tags { display: none; }
+            .menu-btn { display: block; }
+            .pg1-heading { text-align: center; }
+            .pg1-para { text-align: center; }
+            .pg1-btn { display: flex; justify-content: center; margin-top: 25px; }
+            .logo { font-size: 18px; }
+            .container2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+            .about-container { grid-template-columns: 1fr; }
+            .owner-card { flex-direction: column; gap: 25px; }
+            .contact-box { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .contact-box button { width: 100%; }
+            .project-container { grid-template-columns: 1fr; }
+            .left { min-height: 120px; padding: 15px; }
+            .left h2 { font-size: 16px; }
+            .left p { font-size: 12px; }
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-         .carousel-wrap { position: relative; overflow: hidden; border-radius: 12px; }
-    .carousel-track { display: flex; transition: transform 0.7s cubic-bezier(0.25,1,0.5,1); }
-    .carousel-slide { flex: 0 0 100%; position: relative; }
-    .carousel-slide img, .carousel-slide video { width: 100%; max-height: 480px; object-fit: cover; display: block; }
-    .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 20px; background: linear-gradient(to top, rgba(5,15,35,0.85), transparent); color: #ccd6f6; font-size: 14px; }
-    .carousel-dots { display: flex; justify-content: center; gap: 8px; padding: 14px 0; }
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: 0.3s; border: none; }
-    .dot.active { background: #60a5fa; transform: scale(1.3); }
-    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(10,25,47,0.7); border: 1px solid rgba(96,165,250,0.3); color: #60a5fa; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: 0.2s; }
-    .carousel-btn:hover { background: rgba(37,99,235,0.5); }
-    .prev-btn { left: 12px; }
-    .next-btn { right: 12px; }
-    .slide-counter { position: absolute; top: 12px; right: 14px; background: rgba(10,25,47,0.65); color: #ccd6f6; font-size: 12px; padding: 4px 10px; border-radius: 20px; }
+         .two{
+          display: flex;
+          justify-content: space-between;
+        }
+
+         .a-tag {
+          
+             font-size: 10px;
+            letter-spacing: 1px;
+             font-weight: bold;
+            color: white;
+            background: rgba(235, 26, 11, 0.85);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            padding:4px 17px;
+            border-radius: 4px;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+        }
+
+        .carousel-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+        .carousel-track { display: flex; transition: transform 0.7s cubic-bezier(0.25,1,0.5,1); }
+        .carousel-slide { flex: 0 0 100%; position: relative; }
+        .carousel-slide img, .carousel-slide video { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+        .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 20px; background: linear-gradient(to top, rgba(5,15,35,0.85), transparent); color: #ccd6f6; font-size: 14px; }
+        .carousel-dots { display: flex; justify-content: center; gap: 8px; padding: 14px 0; }
+        .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: 0.3s; border: none; }
+        .dot.active { background: #60a5fa; transform: scale(1.3); }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(10,25,47,0.7); border: 1px solid rgba(96,165,250,0.3); color: #60a5fa; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: 0.2s; }
+        .carousel-btn:hover { background: rgba(37,99,235,0.5); }
+        .prev-btn { left: 12px; }
+        .next-btn { right: 12px; }
+        .slide-counter { position: absolute; top: 12px; right: 14px; background: rgba(10,25,47,0.65); color: #ccd6f6; font-size: 12px; padding: 4px 10px; border-radius: 20px; }
     </style>
 </head>
 
@@ -1151,14 +1220,10 @@
 
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
-        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;"><i
-                class="fa-solid fa-house"></i> Home</a>
-        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;"><i
-                class="fa-solid fa-briefcase"></i> Services</a>
-        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;"><i
-                class="fa-solid fa-info-circle"></i> About Us</a>
-        <a href="#owner" onclick="document.getElementById('menu-toggle').checked=false;"><i
-                class="fa-solid fa-envelope"></i> Contact</a>
+        <a href="#page1" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#page2" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-briefcase"></i> Services</a>
+        <a href="#page3" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-info-circle"></i> About Us</a>
+        <a href="#owner" onclick="document.getElementById('menu-toggle').checked=false;"><i class="fa-solid fa-envelope"></i> Contact</a>
     </div>
 
     <!-- PAGE 1: HERO -->
@@ -1204,8 +1269,7 @@
                     Explore Now
                     <span class="arrow">
                         <svg viewBox="0 0 640 640" width="16" height="16">
-                            <path
-                                d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
+                            <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
                         </svg>
                     </span>
                 </div>
@@ -1215,178 +1279,181 @@
         <div class="container2">
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="solar1.jpg" alt="Solar street light" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Solar Street Light</h2>
-                    <p class="b-para">Smart, eco-friendly lighting powered by the sun — zero electricity cost, high
-                        performance, and built for long-term reliability.</p>
+                <div class="b-img">
+                    <div class="two">
+                    <span class="b-tag">Solar</span>
+                    <!-- <span class="a-tag">New</span> -->
+                    </div>
+                    <img src="solar1.jpg" alt="Solar street light" loading="lazy">
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Solar Street Light</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Smart, eco-friendly lighting powered by the sun — zero electricity cost, high performance, and built for long-term reliability.</p>
                 </div>
-            </div>
-
-            <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="solar home.webp" alt="Home solar system" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Home Solar System</h2>
-                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce
-                        electricity costs and support a cleaner, sustainable future.</p>
-                </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="solar street traffic.webp" alt="Smart solar traffic signals"
-                        loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Smart Solar Traffic Signals</h2>
-                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic
-                        management.</p>
+                <div class="b-img">
+                    <span class="b-tag">Solar</span>
+                    <img src="solar home.webp" alt="Home solar system" loading="lazy">
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Home Solar System</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Bring solar power to your home with reliable and efficient solutions that reduce electricity costs and support a cleaner, sustainable future.</p>
                 </div>
-            </div>
-
-            <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="man.png" alt="Technician service" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Get a Technician for Your Problem</h2>
-                    <p class="b-para">Expert technical support for fast, reliable, and efficient solutions tailored to
-                        your needs.</p>
-                </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="solar cleaning.webp" alt="Technician service" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Solar cleaning</h2>
+                <div class="b-img">
+                    <span class="b-tag">Solar</span>
+                    <img src="solar street traffic.webp" alt="Smart solar traffic signals" loading="lazy">
+                </div>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Smart Solar Traffic Signals</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Solar-powered traffic signals ensuring safe, efficient, and cost-effective traffic management.</p>
+                </div>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                </div>
+            </div>
+
+            <div class="box1" data-aos="fade-up">
+                <div class="b-img">
+                    <span class="b-tag">Service</span>
+                    <img src="man.png" alt="Technician service" loading="lazy">
+                </div>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Get a Technician for Your Problem</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Expert technical support for fast, reliable, and efficient solutions tailored to your needs.</p>
+                </div>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                </div>
+            </div>
+
+            <div class="box1" data-aos="fade-up">
+                <div class="b-img">
+                    <span class="b-tag">Service</span>
+                    <img src="solar cleaning.webp" alt="Solar cleaning" loading="lazy">
+                </div>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Solar Cleaning</h2></div>
+                    <div class="b-divider"></div>
                     <p class="b-para">Keep Your Solar Panels Clean, Efficient, and Powering Your Future with Reliable Cleaning Solutions.</p>
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I want a technician for my technical problem."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="corn.webp" alt="Corn export" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Corn / Maize</h2>
-                    <p class="b-para">High-quality corn for global markets, ensuring freshness, consistency, and
-                        reliable supply. Our export services meet international standards.</p>
+                <div class="b-img">
+                    <span class="b-tag">Export</span>
+                    <img src="corn.webp" alt="Corn export" loading="lazy">
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Corn / Maize</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">High-quality corn for global markets, ensuring freshness, consistency, and reliable supply. Our export services meet international standards.</p>
                 </div>
-            </div>
-
-            <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="sugar.webp" alt="Sugar export" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Sugar</h2>
-                    <p class="b-para">High-quality sugar for global markets, ensuring purity, consistency, and timely
-                        delivery meeting international standards.</p>
-                </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="rice.webp" alt="Rice export" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Rice</h2>
-                    <p class="b-para">Premium quality rice with excellent taste and nutritional value. Carefully sourced
-                        and processed for global distribution.</p>
+                <div class="b-img">
+                    <span class="b-tag">Export</span>
+                    <img src="sugar.webp" alt="Sugar export" loading="lazy">
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Sugar</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">High-quality sugar for global markets, ensuring purity, consistency, and timely delivery meeting international standards.</p>
                 </div>
-            </div>
-
-            <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="wheat.webp" alt="Wheat export" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Wheat</h2>
-                    <p class="b-para">Superior quality grains suitable for various food applications. Dependable supply
-                        for international markets.</p>
-                </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="jawar.jpg" alt="Jawar export" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Jawar</h2>
-                    <p class="b-para">Premium quality jowar (sorghum) known for its nutritional value and purity.
-                        Carefully sourced and processed to international standards.</p>
+                <div class="b-img">
+                    <span class="b-tag">Export</span>
+                    <img src="rice.webp" alt="Rice export" loading="lazy">
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Rice</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Premium quality rice with excellent taste and nutritional value. Carefully sourced and processed for global distribution.</p>
+                </div>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
             <div class="box1" data-aos="fade-up">
-                <div class="b-img"><img src="jerra.webp" alt="Jeera export" loading="lazy"></div>
-                <div class="b-heading">
-                    <h2>Jeera</h2>
-                    <p class="b-para">Premium quality jeera (cumin seeds) known for rich aroma, strong flavor, and high
-                        nutritional value. Hygienically processed to meet international standards.</p>
+                <div class="b-img">
+                    <span class="b-tag">Export</span>
+                    <img src="wheat.webp" alt="Wheat export" loading="lazy">
                 </div>
-                <div class="b-btn">
-                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire
-                            Now</button></a>
-                    <a
-                        href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button
-                            class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Wheat</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Superior quality grains suitable for various food applications. Dependable supply for international markets.</p>
+                </div>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                </div>
+            </div>
+
+            <div class="box1" data-aos="fade-up">
+                <div class="b-img">
+                    <span class="b-tag">Export</span>
+                    <img src="jawar.jpg" alt="Jawar export" loading="lazy">
+                </div>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Jawar</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Premium quality jowar (sorghum) known for its nutritional value and purity. Carefully sourced and processed to international standards.</p>
+                </div>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
+                </div>
+            </div>
+
+            <div class="box1" data-aos="fade-up">
+                <div class="b-img">
+                    <span class="b-tag">Export</span>
+                    <img src="jerra.webp" alt="Jeera export" loading="lazy">
+                </div>
+                <div class="b-body">
+                    <div class="b-heading"><h2>Jeera</h2></div>
+                    <div class="b-divider"></div>
+                    <p class="b-para">Premium quality jeera (cumin seeds) known for rich aroma, strong flavor, and high nutritional value. Hygienically processed to meet international standards.</p>
+                </div>
+                <div class="b-footer">
+                    <a href="tel:+918605408258"><button class="b1-btn"><i class="fa-solid fa-phone"></i>Enquire Now</button></a>
+                    <a href="mailto:tuljaieximandservices@gmail.com?subject=Enquiry&body=Hello Shrinath, I would like to discuss about this product with you."><button class="b2-btn"><i class="fa-solid fa-message"></i>Email Now</button></a>
                 </div>
             </div>
 
@@ -1403,303 +1470,206 @@
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-building"></i>
                 <h2>Who We Are</h2>
-                <p>Tuljai Exim & Services is a modern and growing company focused on exports, solar energy, and
-                    electrical solutions. We deliver high-quality, reliable, and innovative services that create
-                    long-term value for our clients.</p>
+                <p>Tuljai Exim & Services is a modern and growing company focused on exports, solar energy, and electrical solutions. We deliver high-quality, reliable, and innovative services that create long-term value for our clients.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-eye"></i>
                 <h2>Our Vision</h2>
-                <p>To become a trusted global provider of export and renewable energy solutions, contributing to a
-                    sustainable and eco-friendly future.</p>
+                <p>To become a trusted global provider of export and renewable energy solutions, contributing to a sustainable and eco-friendly future.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-bullseye"></i>
                 <h2>Our Mission</h2>
-                <p>We are committed to delivering efficient, affordable, and high-quality solutions while maintaining
-                    customer satisfaction and long-term relationships.</p>
+                <p>We are committed to delivering efficient, affordable, and high-quality solutions while maintaining customer satisfaction and long-term relationships.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-solar-panel"></i>
                 <h2>Our Services</h2>
-                <p>We provide solar street lights, home solar systems, smart traffic signals, and expert technical
-                    services for electrical and solar needs.</p>
+                <p>We provide solar street lights, home solar systems, smart traffic signals, and expert technical services for electrical and solar needs.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-wheat-awn"></i>
                 <h2>Export Quality</h2>
-                <p>Our agricultural products like rice, wheat, corn, sugar, and spices are carefully sourced and
-                    processed to meet international quality standards.</p>
+                <p>Our agricultural products like rice, wheat, corn, sugar, and spices are carefully sourced and processed to meet international quality standards.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-thumbs-up"></i>
                 <h2>Why Choose Us</h2>
-                <p>✔ High-quality products<br>✔ Trusted & transparent service<br>✔ Timely delivery<br>✔ Customer-first
-                    approach</p>
+                <p>✔ High-quality products<br>✔ Trusted & transparent service<br>✔ Timely delivery<br>✔ Customer-first approach</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-gears"></i>
                 <h2>Our Strength</h2>
-                <p>Strong technical knowledge, reliable supply chain, and a dedicated team help us deliver consistent
-                    and dependable solutions.</p>
+                <p>Strong technical knowledge, reliable supply chain, and a dedicated team help us deliver consistent and dependable solutions.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-handshake"></i>
                 <h2>Customer Commitment</h2>
-                <p>We focus on understanding client needs and providing customized solutions that ensure satisfaction
-                    and long-term partnerships.</p>
+                <p>We focus on understanding client needs and providing customized solutions that ensure satisfaction and long-term partnerships.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-rocket"></i>
                 <h2>Future Goals</h2>
-                <p>Expanding globally in exports and renewable energy while adopting the latest technologies for better
-                    efficiency and sustainability.</p>
+                <p>Expanding globally in exports and renewable energy while adopting the latest technologies for better efficiency and sustainability.</p>
             </div>
             <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-star"></i>
                 <h2>Our Values</h2>
-                <p>We believe in honesty, quality, and innovation. Our core values drive us to deliver reliable
-                    services, maintain transparency, and build strong trust with our customers and partners.</p>
+                <p>We believe in honesty, quality, and innovation. Our core values drive us to deliver reliable services, maintain transparency, and build strong trust with our customers and partners.</p>
             </div>
         </div>
 
         <!-- PROJECTS -->
-      
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    .proj-section{width:100%;background:#0a192f;font-family:'Rubik',sans-serif}
-    .proj-header{text-align:center;padding:48px 20px 32px}
-    .proj-header span{display:block;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(96,165,250,0.7);margin-bottom:10px;font-weight:400}
-    .proj-header h2{font-size:clamp(28px,5vw,48px);font-weight:700;color:#fff;letter-spacing:-0.5px;line-height:1.1}
-    .proj-header h2 em{font-style:normal;color:#60a5fa}
-    .proj-header p{margin-top:12px;color:rgba(255,255,255,0.35);font-size:14px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+        <style>
+            *{box-sizing:border-box;margin:0;padding:0}
+            .proj-section{width:100%;background:#0a192f;font-family:'Rubik',sans-serif}
+            .proj-header{text-align:center;padding:48px 20px 32px}
+            .proj-header span{display:block;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(96,165,250,0.7);margin-bottom:10px;font-weight:400}
+            .proj-header h2{font-size:clamp(28px,5vw,48px);font-weight:700;color:#fff;letter-spacing:-0.5px;line-height:1.1}
+            .proj-header h2 em{font-style:normal;color:#60a5fa}
+            .proj-header p{margin-top:12px;color:rgba(255,255,255,0.35);font-size:14px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+            .fs-carousel{position:relative;width:100%;height:80vh;min-height:320px;overflow:hidden;background:#000}
+            .fs-track{display:flex;height:100%;will-change:transform;transition:transform 0.95s cubic-bezier(0.77,0,0.18,1)}
+            .fs-slide{flex:0 0 100%;position:relative;height:100%}
+            .fs-slide img,.fs-slide video{width:100%;height:100%;object-fit:cover;display:block}
+            .fs-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.3) 40%,rgba(0,0,0,0.05) 100%)}
+            .fs-text{position:absolute;bottom:0;left:0;right:0;padding:clamp(24px,5vw,60px) clamp(20px,6vw,70px) clamp(70px,8vw,90px);z-index:5}
+            .fs-badge{display:inline-block;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:5px 14px;margin-bottom:14px;backdrop-filter:blur(6px)}
+            .fs-title{font-size:clamp(20px,4.5vw,44px);font-weight:700;line-height:1.15;color:#fff;mix-blend-mode:screen;opacity:0.95;letter-spacing:-0.3px}
+            .fs-sub{font-size:clamp(12px,1.8vw,15px);color:rgba(255,255,255,0.5);margin-top:8px;mix-blend-mode:screen;letter-spacing:0.3px}
+            .fs-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);color:#fff;width:clamp(36px,5vw,50px);height:clamp(36px,5vw,50px);cursor:pointer;font-size:clamp(16px,2.5vw,22px);display:flex;align-items:center;justify-content:center;transition:all 0.25s;backdrop-filter:blur(10px);z-index:10}
+            .fs-nav:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.45)}
+            .fs-prev{left:clamp(10px,3vw,28px)}
+            .fs-next{right:clamp(10px,3vw,28px)}
+            .fs-bottom{position:absolute;bottom:clamp(20px,4vw,40px);left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,70px);gap:16px;z-index:10;pointer-events:none}
+            .fs-bottom > *{pointer-events:auto}
+            .fs-counter{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.6);font-weight:600;order:2}
+            .fs-dots{display:flex;gap:8px;align-items:center;order:1}
+            .fs-dot{width:25px;height:2px;background:rgba(255,255,255,0.3);cursor:pointer;border:none;transition:all 0.35s}
+            .fs-dot.active{background:#fff;width:45px}
+            .fs-progress{position:absolute;bottom:0;left:0;height:2px;background:rgba(255,255,255,0.6);width:0%}
+            .proj-footer{display:flex;justify-content:center;padding:24px 20px 40px;gap:8px;flex-wrap:wrap}
+            .slide-thumb{width:clamp(48px,8vw,72px);height:4px;background:rgba(255,255,255,0.08);cursor:pointer;border:none;transition:all 0.3s}
+            .slide-thumb.active{background:#60a5fa}
+        </style>
 
-    .fs-carousel{position:relative;width:100%;height:90vh;min-height:320px;;overflow:hidden;background:#000}
-    .fs-track{display:flex;height:100%;will-change:transform;transition:transform 0.95s cubic-bezier(0.77,0,0.18,1)}
-    .fs-slide{flex:0 0 100%;position:relative;height:100%}
-    .fs-slide img,.fs-slide video{width:100%;height:100%;object-fit:cover;display:block}
+        <div class="proj-section">
+            <div class="proj-header">
+                <span>Tuljai exim & services</span>
+                <h2>Our <em>Projects</em></h2>
+                <p>Solar power plant projects across Khavda, Gujarat and Harba, Rajasthan — built to last.</p>
+            </div>
 
-    .fs-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.3) 40%,rgba(0,0,0,0.05) 100%)}
+            <div class="fs-carousel">
+                <div class="fs-track" id="fst">
+                    <div class="fs-slide">
+                        <img src="project1.jpeg" alt="Project 1" onerror="this.style.background='#0f172a';this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Project+1'">
+                        <div class="fs-overlay"></div>
+                        <div class="fs-text">
+                            <div class="fs-badge">Khavda · Gujarat</div>
+                            <div class="fs-title">Solar Power Plant</div>
+                            <div class="fs-sub">Panel mounting &amp; structural installation</div>
+                        </div>
+                    </div>
+                    <div class="fs-slide">
+                        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+                            <source src="sol video.mp4" type="video/mp4">
+                        </video>
+                        <div class="fs-overlay"></div>
+                        <div class="fs-text">
+                            <div class="fs-badge">Live · On-Site</div>
+                            <div class="fs-title">Installation in Progress</div>
+                            <div class="fs-sub">Real-time footage from our solar project</div>
+                        </div>
+                    </div>
+                    <div class="fs-slide">
+                        <img src="pro img2.jpeg" alt="Project 2" onerror="this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Project+2'">
+                        <div class="fs-overlay"></div>
+                        <div class="fs-text">
+                            <div class="fs-badge">Harba · Rajasthan</div>
+                            <div class="fs-title">Electrical Wiring &amp; Testing</div>
+                            <div class="fs-sub">Precision work to industry standards</div>
+                        </div>
+                    </div>
+                    <div class="fs-slide">
+                        <img src="workers.webp" alt="Team" onerror="this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Our+Team'">
+                        <div class="fs-overlay"></div>
+                        <div class="fs-text">
+                            <div class="fs-badge">Our People</div>
+                            <div class="fs-title">Dedicated Team On-Site</div>
+                            <div class="fs-sub">Expert professionals delivering reliable results</div>
+                        </div>
+                    </div>
+                </div>
 
-    .fs-text{position:absolute;bottom:0;left:0;right:0;padding:clamp(24px,5vw,60px) clamp(20px,6vw,70px)}
-    .fs-badge{display:inline-block;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:5px 14px;margin-bottom:14px;backdrop-filter:blur(6px)}
-    .fs-title{font-size:clamp(20px,4.5vw,44px);font-weight:700;line-height:1.15;color:#fff;mix-blend-mode:screen;opacity:0.95;letter-spacing:-0.3px}
-    .fs-sub{font-size:clamp(12px,1.8vw,15px);color:rgba(255,255,255,0.5);margin-top:8px;mix-blend-mode:screen;letter-spacing:0.3px}
+                <button class="fs-nav fs-prev" id="fsPrev" aria-label="Previous">&#8592;</button>
+                <button class="fs-nav fs-next" id="fsNext" aria-label="Next">&#8594;</button>
+                <div class="fs-bottom">
+                    <div class="fs-counter" id="fsCtr">01 / 04</div>
+                    <div class="fs-dots" id="fsDots"></div>
+                </div>
+                <div class="fs-progress" id="fsBar"></div>
+            </div>
 
-    .fs-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);color:#fff;width:clamp(36px,5vw,50px);height:clamp(36px,5vw,50px);cursor:pointer;font-size:clamp(16px,2.5vw,22px);display:flex;align-items:center;justify-content:center;transition:all 0.25s;backdrop-filter:blur(10px);z-index:10}
-    .fs-nav:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.45)}
-    .fs-prev{left:clamp(10px,3vw,28px)}
-    .fs-next{right:clamp(10px,3vw,28px)}
-
-    .fs-bottom{position:absolute;bottom:clamp(16px,3vw,28px);right:clamp(20px,5vw,60px);display:flex;align-items:center;gap:16px;z-index:10}
-    .fs-counter{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);font-weight:500;white-space:nowrap}
-    .fs-dots{display:flex;gap:6px;align-items:center}
-    .fs-dot{width:20px;height:2px;background:rgba(255,255,255,0.22);cursor:pointer;border:none;transition:all 0.35s}
-    .fs-dot.active{background:#fff;width:36px}
-
-    .fs-progress{position:absolute;bottom:0;left:0;height:2px;background:rgba(255,255,255,0.6);width:0%}
-
-    .proj-footer{display:flex;justify-content:center;padding:24px 20px 40px;gap:8px;flex-wrap:wrap}
-    .slide-thumb{width:clamp(48px,8vw,72px);height:4px;background:rgba(255,255,255,0.08);cursor:pointer;border:none;transition:all 0.3s}
-    .slide-thumb.active{background:#60a5fa}
-    /* 1. Add extra padding to the bottom of the text so it doesn't hit the dots */
-.fs-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /* Increased bottom padding from 24px to 80px on mobile via clamp */
-  padding: clamp(24px, 5vw, 60px) clamp(20px, 6vw, 70px) clamp(70px, 8vw, 90px); 
-  z-index: 5;
-}
-
-/* 2. Fix the navigation bar positioning */
-.fs-bottom {
-  position: absolute;
-  bottom: clamp(20px, 4vw, 40px); /* Fixed distance from the very bottom */
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  /* This pushes the dots to the left and counter to the right */
-  justify-content: space-between; 
-  padding: 0 clamp(20px, 6vw, 70px); /* Matches text alignment exactly */
-  gap: 16px;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Ensure dots/counter are clickable but the container isn't blocking the image */
-.fs-bottom > * {
-  pointer-events: auto;
-}
-
-/* 3. Swap the order so Dots are on the Left and Counter is on the Right (matches your screenshot) */
-.fs-counter {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 600;
-  order: 2; /* Moves counter to the right */
-}
-
-.fs-dots {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  order: 1; /* Moves dots to the left */
-}
-
-/* Ensure the lines (dots) are clearly visible */
-.fs-dot {
-  width: 25px; 
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  border: none;
-  transition: all 0.35s;
-}
-
-.fs-dot.active {
-  background: #fff;
-  width: 45px;
-}
-  </style>
-
-
-  <div class="proj-section">
-    <div class="proj-header">
-      <span>Tuljai exim & services</span>
-      <h2>Our <em>Projects</em></h2>
-      <p>Solar power plant projects across Khavda, Gujarat and Harba, Rajasthan — built to last.</p>
-    </div>
-
-    <div class="fs-carousel">
-      <div class="fs-track" id="fst">
-
-        <div class="fs-slide">
-          <img src="project1.jpeg" alt="Project 1" onerror="this.style.background='#0f172a';this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Project+1'">
-          <div class="fs-overlay"></div>
-          <div class="fs-text">
-            <div class="fs-badge">Khavda · Gujarat</div>
-            <div class="fs-title">Solar Power Plant</div>
-            <div class="fs-sub">Panel mounting &amp; structural installation</div>
-          </div>
+            <div class="proj-footer" id="thumbs"></div>
         </div>
 
-        <div class="fs-slide">
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-            <source src="sol video.mp4" type="video/mp4">
-          </video>
-          <div class="fs-overlay"></div>
-          <div class="fs-text">
-            <div class="fs-badge">Live · On-Site</div>
-            <div class="fs-title">Installation in Progress</div>
-            <div class="fs-sub">Real-time footage from our solar project</div>
-          </div>
-        </div>
-
-        <div class="fs-slide">
-          <img src="pro img2.jpeg" alt="Project 2" onerror="this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Project+2'">
-          <div class="fs-overlay"></div>
-          <div class="fs-text">
-            <div class="fs-badge">Harba · Rajasthan</div>
-            <div class="fs-title">Electrical Wiring &amp; Testing</div>
-            <div class="fs-sub">Precision work to industry standards</div>
-          </div>
-        </div>
-
-        <div class="fs-slide">
-          <img src="workers.webp" alt="Team" onerror="this.src='https://placehold.co/1400x700/0f172a/60a5fa?text=Our+Team'">
-          <div class="fs-overlay"></div>
-          <div class="fs-text">
-            <div class="fs-badge">Our People</div>
-            <div class="fs-title">Dedicated Team On-Site</div>
-            <div class="fs-sub">Expert professionals delivering reliable results</div>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="fs-nav fs-prev" id="fsPrev" aria-label="Previous">&#8592;</button>
-      <button class="fs-nav fs-next" id="fsNext" aria-label="Next">&#8594;</button>
-
-      <div class="fs-bottom">
-        <div class="fs-counter" id="fsCtr">01 / 04</div>
-        <div class="fs-dots" id="fsDots"></div>
-      </div>
-      <div class="fs-progress" id="fsBar"></div>
-    </div>
-
-    <div class="proj-footer" id="thumbs"></div>
-  </div>
-
-  <script>
-  (function(){
-    const track=document.getElementById('fst');
-    const slides=track.querySelectorAll('.fs-slide');
-    const dotsWrap=document.getElementById('fsDots');
-    const thumbWrap=document.getElementById('thumbs');
-    const ctr=document.getElementById('fsCtr');
-    const bar=document.getElementById('fsBar');
-    const n=slides.length;
-    let cur=0,raf,dur=5000;
-
-    const labels=['Solar Plant','Site Video','Wiring & Testing','Our Team'];
-
-    slides.forEach((_,i)=>{
-      const d=document.createElement('button');
-      d.className='fs-dot'+(i===0?' active':'');
-      d.onclick=()=>goTo(i);
-      dotsWrap.appendChild(d);
-
-      const t=document.createElement('button');
-      t.className='slide-thumb'+(i===0?' active':'');
-      t.title=labels[i]||('Slide '+(i+1));
-      t.onclick=()=>goTo(i);
-      thumbWrap.appendChild(t);
-    });
-
-    function goTo(idx){
-      cur=(idx+n)%n;
-      track.style.transform=`translateX(-${cur*100}%)`;
-      dotsWrap.querySelectorAll('.fs-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
-      thumbWrap.querySelectorAll('.slide-thumb').forEach((t,i)=>t.classList.toggle('active',i===cur));
-      ctr.textContent=String(cur+1).padStart(2,'0')+' / '+String(n).padStart(2,'0');
-      resetBar();
-    }
-
-    function resetBar(){
-      cancelAnimationFrame(raf);
-      bar.style.transition='none';
-      bar.style.width='0%';
-      let start=null;
-      function step(ts){
-        if(!start)start=ts;
-        const p=Math.min((ts-start)/dur*100,100);
-        bar.style.width=p+'%';
-        if(p<100)raf=requestAnimationFrame(step);
-        else goTo(cur+1);
-      }
-      raf=requestAnimationFrame(step);
-    }
-
-    document.getElementById('fsPrev').onclick=()=>goTo(cur-1);
-    document.getElementById('fsNext').onclick=()=>goTo(cur+1);
-
-    let tx=0;
-    const el=document.querySelector('.fs-carousel');
-    el.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
-    el.addEventListener('touchend',e=>{
-      const dx=e.changedTouches[0].clientX-tx;
-      if(Math.abs(dx)>40)goTo(cur+(dx<0?1:-1));
-    },{passive:true});
-
-    resetBar();
-  })();
-  </script>
-
-
+        <script>
+        (function(){
+            const track=document.getElementById('fst');
+            const slides=track.querySelectorAll('.fs-slide');
+            const dotsWrap=document.getElementById('fsDots');
+            const thumbWrap=document.getElementById('thumbs');
+            const ctr=document.getElementById('fsCtr');
+            const bar=document.getElementById('fsBar');
+            const n=slides.length;
+            let cur=0,raf,dur=5000;
+            const labels=['Solar Plant','Site Video','Wiring & Testing','Our Team'];
+            slides.forEach((_,i)=>{
+                const d=document.createElement('button');
+                d.className='fs-dot'+(i===0?' active':'');
+                d.onclick=()=>goTo(i);
+                dotsWrap.appendChild(d);
+                const t=document.createElement('button');
+                t.className='slide-thumb'+(i===0?' active':'');
+                t.title=labels[i]||('Slide '+(i+1));
+                t.onclick=()=>goTo(i);
+                thumbWrap.appendChild(t);
+            });
+            function goTo(idx){
+                cur=(idx+n)%n;
+                track.style.transform=`translateX(-${cur*100}%)`;
+                dotsWrap.querySelectorAll('.fs-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+                thumbWrap.querySelectorAll('.slide-thumb').forEach((t,i)=>t.classList.toggle('active',i===cur));
+                ctr.textContent=String(cur+1).padStart(2,'0')+' / '+String(n).padStart(2,'0');
+                resetBar();
+            }
+            function resetBar(){
+                cancelAnimationFrame(raf);
+                bar.style.transition='none';
+                bar.style.width='0%';
+                let start=null;
+                function step(ts){
+                    if(!start)start=ts;
+                    const p=Math.min((ts-start)/dur*100,100);
+                    bar.style.width=p+'%';
+                    if(p<100)raf=requestAnimationFrame(step);
+                    else goTo(cur+1);
+                }
+                raf=requestAnimationFrame(step);
+            }
+            document.getElementById('fsPrev').onclick=()=>goTo(cur-1);
+            document.getElementById('fsNext').onclick=()=>goTo(cur+1);
+            let tx=0;
+            const el=document.querySelector('.fs-carousel');
+            el.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+            el.addEventListener('touchend',e=>{
+                const dx=e.changedTouches[0].clientX-tx;
+                if(Math.abs(dx)>40)goTo(cur+(dx<0?1:-1));
+            },{passive:true});
+            resetBar();
+        })();
+        </script>
 
         <a href="#page2">
             <div class="back"><i class="fa-solid fa-arrow-up"></i> Back to top</div>
@@ -1726,8 +1696,7 @@
                     </div>
                     <div class="contact-box">
                         <span><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</span>
-                        <a href="https://wa.me/9356824656" target="_blank"
-                            rel="noopener noreferrer"><button>Chat</button></a>
+                        <a href="https://wa.me/9356824656" target="_blank" rel="noopener noreferrer"><button>Chat</button></a>
                     </div>
                     <div class="contact-box">
                         <span><i class="fa-solid fa-envelope"></i> Email Us</span>
@@ -1753,10 +1722,6 @@
             </div>
         </div>
 
-        <!-- REVIEWS -->
-
-
-
         <!-- SOCIAL ICONS -->
         <div class="icons">
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1779,8 +1744,8 @@
             </div>
         </div>
 
-        <!-- WHATSAPP WIDGET -->
-        <div class="whatsapp-container">
+        <!-- WHATSAPP WIDGET (DRAGGABLE) -->
+        <div class="whatsapp-container" id="waContainer">
             <div class="chat-box" id="chatBox">
                 <div class="chat-header">
                     <div class="online"></div>
@@ -1788,24 +1753,18 @@
                 </div>
                 <div class="chat-text" id="chatText"></div>
             </div>
-            <div class="whatsapp-btn" onclick="openWhatsApp()" role="button" aria-label="Chat on WhatsApp">
+            <div class="whatsapp-btn" id="waBtnWrap" onclick="openWhatsApp()" role="button" aria-label="Chat on WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
                 <div class="badge" id="badge">1</div>
+                <span class="drag-hint">drag me</span>
             </div>
         </div>
-
-    
 
         <!-- FIREBASE REVIEWS -->
         <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
             import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy }
                 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-            // ADD YOUR FIREBASE CONFIG HERE:
-            // const firebaseConfig = { apiKey: "...", authDomain: "...", projectId: "..." };
-            // const app = initializeApp(firebaseConfig);
-            // const db = getFirestore(app);
 
             let reviews = [];
             let currentIndex = 0;
@@ -1816,44 +1775,20 @@
             localStorage.setItem("tuljai_uid", userId);
 
             const stars = document.querySelectorAll("#starInput span");
-            stars.forEach((star, index) => {
-                star.addEventListener("mouseover", () => stars.forEach((s, i) => s.classList.toggle("hovered", i <= index)));
-                star.addEventListener("mouseout", () => stars.forEach(s => s.classList.remove("hovered")));
-                star.addEventListener("click", () => {
-                    selectedRating = index + 1;
-                    stars.forEach((s, i) => s.classList.toggle("active", i < selectedRating));
+            if (stars.length) {
+                stars.forEach((star, index) => {
+                    star.addEventListener("mouseover", () => stars.forEach((s, i) => s.classList.toggle("hovered", i <= index)));
+                    star.addEventListener("mouseout", () => stars.forEach(s => s.classList.remove("hovered")));
+                    star.addEventListener("click", () => {
+                        selectedRating = index + 1;
+                        stars.forEach((s, i) => s.classList.toggle("active", i < selectedRating));
+                    });
                 });
-            });
-
-            const suggestions = [
-                "☀️ Solar Expertise", "🛠️ Professional Install", "⚡ High Efficiency",
-                "💰 Great ROI", "🌱 Eco-Friendly", "🔧 Reliable Support",
-                "📝 Easy Subsidy", "🤝 Trusted Partner", "📞 Quick Response", "✨ Neat Wiring"
-            ];
-
-            suggestions.forEach(text => {
-                const tag = document.createElement("div");
-                tag.className = "tag-option";
-                tag.innerText = text;
-                tag.onclick = () => {
-                    if (selectedTags.includes(text)) {
-                        selectedTags = selectedTags.filter(t => t !== text);
-                        tag.classList.remove("active");
-                    } else {
-                        selectedTags.push(text);
-                        tag.classList.add("active");
-                    }
-                };
-                document.getElementById("tagsContainer").appendChild(tag);
-            });
-
-            // Uncomment when Firebase config is added:
-            // window.submitReview = async function() { ... }
-            // window.deleteReview = async function(id) { ... }
-            // async function loadReviews() { ... }
+            }
 
             function renderSlides() {
                 const slider = document.getElementById("slider");
+                if (!slider) return;
                 slider.innerHTML = reviews.length
                     ? ""
                     : `<div class='slide'><div class='review-card'>No reviews yet. Be the first!</div></div>`;
@@ -1877,15 +1812,9 @@
                 moveSlide();
             }
 
-            function updateAverage() {
-                if (!reviews.length) return;
-                const avg = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
-                document.getElementById("avgRating").innerText = avg;
-                document.getElementById("avgStars").innerText = "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
-            }
-
             function moveSlide() {
-                document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+                const slider = document.getElementById("slider");
+                if (slider) slider.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
 
             window.nextSlide = () => {
@@ -1895,13 +1824,15 @@
                 if (reviews.length > 1) { currentIndex = (currentIndex - 1 + reviews.length) % reviews.length; moveSlide(); }
             };
 
-            document.getElementById("submitBtn").onclick = () => window.submitReview && window.submitReview();
-            document.getElementById("nextBtn").onclick = () => window.nextSlide();
-            document.getElementById("prevBtn").onclick = () => window.prevSlide();
+            const submitBtn = document.getElementById("submitBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const prevBtn = document.getElementById("prevBtn");
+            if (submitBtn) submitBtn.onclick = () => window.submitReview && window.submitReview();
+            if (nextBtn) nextBtn.onclick = () => window.nextSlide();
+            if (prevBtn) prevBtn.onclick = () => window.prevSlide();
             setInterval(window.nextSlide, 5000);
 
             renderSlides();
-            updateAverage();
         </script>
 
         <!-- LOADER SCRIPT -->
@@ -1924,14 +1855,94 @@
             AOS.init({ duration: 1400, once: true, offset: 120, delay: 100 });
         </script>
 
-        <!-- WHATSAPP CHAT SCRIPT -->
+        <!-- WHATSAPP: OPEN + DRAG LOGIC -->
         <script>
             function openWhatsApp() {
+                if (waWasDragged) return;
                 const phone = "918605408258";
                 const message = "Hi, I need help!";
                 window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
             }
 
+            // ── Draggable WhatsApp widget ──────────────────────────
+            const waContainer = document.getElementById('waContainer');
+            let waWasDragged = false;
+            let isDragging = false;
+            let startX, startY, origLeft, origBottom;
+
+            // Initialize position from CSS defaults
+            function getPos() {
+                const r = waContainer.getBoundingClientRect();
+                return { left: r.left, top: r.top, width: r.width, height: r.height };
+            }
+
+            function startDrag(clientX, clientY) {
+                isDragging = true;
+                waWasDragged = false;
+                startX = clientX;
+                startY = clientY;
+
+                // Switch from bottom/right to top/left absolute positioning
+                const pos = getPos();
+                waContainer.style.bottom = 'auto';
+                waContainer.style.right = 'auto';
+                waContainer.style.left = pos.left + 'px';
+                waContainer.style.top = pos.top + 'px';
+                waContainer.classList.add('dragging');
+                document.body.style.userSelect = 'none';
+            }
+
+            function onDrag(clientX, clientY) {
+                if (!isDragging) return;
+                const dx = clientX - startX;
+                const dy = clientY - startY;
+                if (Math.abs(dx) > 4 || Math.abs(dy) > 4) waWasDragged = true;
+
+                let newLeft = parseFloat(waContainer.style.left) + dx;
+                let newTop = parseFloat(waContainer.style.top) + dy;
+
+                // Clamp within viewport
+                const w = waContainer.offsetWidth;
+                const h = waContainer.offsetHeight;
+                newLeft = Math.max(0, Math.min(window.innerWidth - w, newLeft));
+                newTop = Math.max(0, Math.min(window.innerHeight - h, newTop));
+
+                waContainer.style.left = newLeft + 'px';
+                waContainer.style.top = newTop + 'px';
+                startX = clientX;
+                startY = clientY;
+            }
+
+            function endDrag() {
+                if (!isDragging) return;
+                isDragging = false;
+                waContainer.classList.remove('dragging');
+                document.body.style.userSelect = '';
+                // Reset drag flag after a tick so click handler doesn't fire
+                setTimeout(() => { waWasDragged = false; }, 10);
+            }
+
+            // Mouse events
+            waContainer.addEventListener('mousedown', e => {
+                startDrag(e.clientX, e.clientY);
+                e.preventDefault();
+            });
+            document.addEventListener('mousemove', e => onDrag(e.clientX, e.clientY));
+            document.addEventListener('mouseup', endDrag);
+
+            // Touch events
+            waContainer.addEventListener('touchstart', e => {
+                startDrag(e.touches[0].clientX, e.touches[0].clientY);
+            }, { passive: true });
+            document.addEventListener('touchmove', e => {
+                if (isDragging) {
+                    onDrag(e.touches[0].clientX, e.touches[0].clientY);
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            document.addEventListener('touchend', endDrag);
+
+            // ── Chat popup logic ───────────────────────────────────
             window.addEventListener("load", () => {
                 const chatBox = document.getElementById("chatBox");
                 const badge = document.getElementById("badge");
@@ -1972,5 +1983,4 @@
         </script>
 
 </body>
-
 </html>
